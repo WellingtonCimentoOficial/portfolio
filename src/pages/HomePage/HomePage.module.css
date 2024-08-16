@@ -1,0 +1,95 @@
+.wrapper {
+    background-color: transparent;
+}
+.containerMainSection {
+}
+.containerOne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0px;
+}
+.containerOneItem {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.containerOneItemTitleOne {
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+.containerOneItemTitleOne::first-letter {
+    font-size: 3rem;
+}
+.containerOneItemTitleOne::last-letter{
+    font-size: 3rem;
+}
+.containerOneItemTitleTwo {
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+.containerOneItemText {
+    font-size: 1rem;
+}
+.containerOneItemButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.containerOneimage {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.2);
+}
+.containerOneImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.containerSection {
+    padding: 30px 0px;
+}
+.containerSectionBody {
+    padding: 60px 0px;
+    background-color: transparent;
+}
+.containerSoftSkillsBody {
+    background-color: transparent;
+}
+.containerSoftSkillsBodyItem {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+.containerTechStackBody {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.containerTechStackBodyItem {
+    flex: 1;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerTechStackBodyItemImage {
+    width: 45px;
+    height: 45px;
+}
+.containerContactBody {
+    width: 800px;
+    margin: auto;
+}
+
