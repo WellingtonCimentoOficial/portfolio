@@ -25,6 +25,5 @@
 }
 .icon {
     font-size: 1.5rem;
-    color: var(--principal-color);
     transition: 0.25s;
 }

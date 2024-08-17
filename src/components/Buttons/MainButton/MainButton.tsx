@@ -22,6 +22,10 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
     {backgroundColor: backgroundColor, color: color} : 
     backgroundColor && filltype === 'borderonly' ? 
     {backgroundColor: color, color: backgroundColor} : undefined
+    
+    const styleIcon = backgroundColor && filltype === 'default' ? 
+    {fill: color} : backgroundColor && filltype === 'borderonly' ? 
+    {fill: backgroundColor} : undefined
 
     const handleHoverEffect = (state: 'in'|'out') => {
         const element = type === 'button' ? buttonRef.current : buttonAnchorRef.current
@@ -62,7 +66,7 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
                     <>
                         {icon &&
                             <div ref={iconRef} className={styles.containerIcon}>
-                                {React.cloneElement(icon, {className: styles.icon})}
+                                {React.cloneElement(icon, {className: styles.icon, style: {...styleIcon}})}
                             </div>
                         }
                         {children}
@@ -75,7 +79,7 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
                     <>
                         {icon &&
                             <div ref={iconRef} className={styles.containerIcon}>
-                                {React.cloneElement(icon, {className: styles.icon})}
+                                {React.cloneElement(icon, {className: styles.icon, style: {...styleIcon}})}
                             </div>
                         }
                         {children}

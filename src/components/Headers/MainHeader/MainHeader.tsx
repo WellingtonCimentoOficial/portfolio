@@ -30,7 +30,7 @@ const MainHeader = (props: Props) => {
         },
     ]
 
-    const scrollToSection = (id: string, e: React.MouseEvent<HTMLAnchorElement>): void => {
+    const scrollToSection = (id: string, e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>): void => {
         e.preventDefault()
         const section = document.getElementById(id)
         const offset = 70
@@ -57,7 +57,11 @@ const MainHeader = (props: Props) => {
                                     <a className={styles.navigationListLiLink} href={item.href} onClick={(e) => scrollToSection(item.href, e)}>{item.name}</a>
                                 </li>
                             )))}
-                            <MainButton type='anchor' filltype='borderonly' href='/'>Projetos</MainButton>
+                            <div onClick={(e) => scrollToSection("projects", e)}>
+                                <MainButton type='anchor' filltype='borderonly' href='/'> 
+                                    Projetos
+                                </MainButton>
+                            </div>
                         </ul>
                     </nav>
                 </div>

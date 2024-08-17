@@ -23,6 +23,8 @@ import { PiHandshakeThin, PiMegaphoneThin, PiCheckThin,
  } from "react-icons/pi";
 import ContactForm from '../../components/Forms/ContactForm/ContactForm'
 import { FaGithub } from "react-icons/fa6";
+import { projectData } from '../../datas/projectsData'
+import PreviewCard from '../../components/Cards/PreviewCard/PreviewCard'
 
 type Props = {}
 type defaultType = {
@@ -126,10 +128,10 @@ const HomePage = (props: Props) => {
                             Transforme sua ideia em realidade digital utilizando tecnologias de ponta como Python, Django, React com TypeScript, banco de dados PostgreSQL e Docker. Vamos juntos criar soluções inovadoras e eficientes!
                             </span>
                             <div className={styles.containerOneItemButtons}>
-                                <MainButton type='anchor' href='/' filltype='borderonly' icon={<FaGithub />} backgroundColor='black' color='white'>
+                                <MainButton type='anchor' href='https://github.com/WellingtonCimentoOficial' disableHoverEffect filltype='borderonly' icon={<FaGithub />} backgroundColor='black' color='white'>
                                     GitHub
                                 </MainButton>
-                                <MainButton type='anchor' href='/' >Baixar CV</MainButton>
+                                <MainButton type='anchor' href='https://drive.usercontent.google.com/u/0/uc?id=1bB8kCRkQx6Sovw5QWzXF1xendnB70ei4&export=download' disableHoverEffect>Baixar CV</MainButton>
                             </div>
                         </div>
                         <div className={styles.containerOneimage}>
@@ -142,7 +144,11 @@ const HomePage = (props: Props) => {
                 <WidthLayout>
                     <TitleDescLayout title={projects.title} description={projects.description}>
                         <div className={`${styles.containerSectionBody} ${styles.containerProjectsBody}`}>
-
+                            {projectData.map(project => (
+                                Array.from(Array(9)).map((_, index) => (
+                                    <PreviewCard key={project.id + index} data={project} />
+                                ))
+                            ))}
                         </div>
                     </TitleDescLayout>
                 </WidthLayout>
