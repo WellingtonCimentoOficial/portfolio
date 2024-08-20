@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState } from 'react'
 import styles from './HomePage.module.css'
 import WidthLayout from '../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../components/Buttons/MainButton/MainButton'
@@ -25,6 +25,8 @@ import ContactForm from '../../components/Forms/ContactForm/ContactForm'
 import { FaGithub } from "react-icons/fa6";
 import { projectData } from '../../datas/projectsData'
 import PreviewCard from '../../components/Cards/PreviewCard/PreviewCard'
+import { ProjectType } from '../../types/projectType'
+import ProjectModal from '../../components/Modals/ProjectModal/ProjectModal'
 
 type Props = {}
 type defaultType = {
@@ -44,6 +46,8 @@ type SoftSkillsType = defaultType & {
 }
 
 const HomePage = (props: Props) => {
+    const [modalData, setModalData] = useState<ProjectType|null>(null)
+    const [showModal, setShowModal] = useState<boolean>(false)
 
     const projects: defaultType = {
         title: "Projetos",
@@ -116,6 +120,11 @@ const HomePage = (props: Props) => {
         description: "Pronto para novas oportunidades e desafios? Entre em contato para discutir como posso contribuir com suas equipes e projetos."
     }
 
+    const handleModal = (data: ProjectType) => {
+        setModalData(data)
+        setShowModal(true)
+    }
+
     return (
         <div className={styles.wrapper}>
             <div className={`${styles.containerSection} ${styles.containerMainSection}`}>
@@ -146,7 +155,7 @@ const HomePage = (props: Props) => {
                         <div className={`${styles.containerSectionBody} ${styles.containerProjectsBody}`}>
                             {projectData.map(project => (
                                 Array.from(Array(9)).map((_, index) => (
-                                    <PreviewCard key={project.id + index} data={project} />
+                                    <PreviewCard key={project.id + index} data={project} setState={handleModal} />
                                 ))
                             ))}
                         </div>
@@ -200,6 +209,13 @@ const HomePage = (props: Props) => {
                     </TitleDescLayout>
                 </WidthLayout>
             </section>
+            {modalData && showModal && 
+                <ProjectModal 
+                    title={modalData.title} 
+                    data={modalData} 
+                    setCloseWindowState={(value) => setShowModal(!value)} 
+                />
+            }
         </div>
     )
 }

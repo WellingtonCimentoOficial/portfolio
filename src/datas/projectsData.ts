@@ -13,7 +13,7 @@ export const projectData: ProjectType[] = [
             },
             others: [
                 {
-                    id: 1,
+                    id: 0,
                     url: eu
                 },
                 {
@@ -21,7 +21,31 @@ export const projectData: ProjectType[] = [
                     url: eu
                 },
                 {
-                    id: 1,
+                    id: 2,
+                    url: eu
+                },
+                {
+                    id: 3,
+                    url: eu
+                },
+                {
+                    id: 4,
+                    url: eu
+                },
+                {
+                    id: 5,
+                    url: eu
+                },
+                {
+                    id: 6,
+                    url: eu
+                },
+                {
+                    id: 7,
+                    url: eu
+                },
+                {
+                    id: 8,
                     url: eu
                 },
             ]

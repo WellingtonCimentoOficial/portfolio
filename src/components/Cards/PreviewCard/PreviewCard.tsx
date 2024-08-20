@@ -6,25 +6,24 @@ import { PiHeart, PiGithubLogo, PiGithubLogoFill, PiEye, PiEyeFill } from "react
 
 type Props = {
     data: ProjectType
+    setState: (data: ProjectType) => void
 }
 
-const PreviewCard = ({ data }: Props) => {
+const PreviewCard = ({ data, setState}: Props) => {
     const title = data.title.length > 15 ? data.title.slice(0, 15) + '...' : data.title
     const description = data.description.length > 23 ? data.description.slice(0, 23) + '...' : data.description
 
     const [githubIsViewed, setGithubIsViewed] = useState<boolean>(false)
     const [isViewed, setIsViewed] = useState<boolean>(false)
 
-    const defaultIconProps = {
-        className: styles.icon,
-        onMouseEnter: () => setGithubIsViewed(oldValue => !oldValue),
-        onMouseOut: () => setGithubIsViewed(oldValue => !oldValue)
+    const handleClick = () => {
+        setState(data)
     }
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <a href='/' className={styles.containerSection}>
+                <div className={styles.containerSection} onClick={handleClick}>
                     <div className={styles.containerOver}>
                         <div className={styles.header}>
                             <h3 className={styles.description}>{description}</h3>
@@ -38,13 +37,13 @@ const PreviewCard = ({ data }: Props) => {
                     <div className={styles.containerImage}>
                         <img className={styles.flexImage} src={data.images.main.url} alt="" />
                     </div>
-                </a>
+                </div>
                 <div className={styles.body}>
                     <div className={styles.containerBodyHeader}>
                         <div className={styles.containerLogo}>
                             <img className={styles.imageLogo} src={data.images.main.url} alt="" />
                         </div>
-                        <a href='/' className={styles.projectTitle}>{title}</a>
+                        <span className={styles.projectTitle} onClick={handleClick}>{title}</span>
                     </div>
                     <div className={styles.containerIcons}>
                         <div className={styles.containerIcon}>
