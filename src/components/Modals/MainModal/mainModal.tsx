@@ -3,6 +3,7 @@ import styles from './mainModal.module.css'
 import { PiPlus, PiLinkBold } from "react-icons/pi";
 import { mainModalType } from '../../../types/mainModalType';
 import { useScrollBlock } from '../../../hooks/useBlockScroll';
+import { Link } from 'react-router-dom';
 
 
 type Props = mainModalType & {
@@ -31,10 +32,10 @@ const MainModal = ({setCloseWindowState, children, title, type, href='/'}: Props
                     {type === 'text' ? (
                         <span className={styles.title}>{title}</span>
                     ):(
-                        <a href={href} className={`${styles.title} ${styles.titleAnchor}`}>
+                        <Link to={href} className={`${styles.title} ${styles.titleAnchor}`}>
                             {title}
                             <PiLinkBold className={styles.titleIcon} />
-                        </a>
+                        </Link>
                     )}
                     <div className={styles.containerClose} onClick={() => setCloseWindowState(true)}>
                         <PiPlus className={styles.closeIcon} />

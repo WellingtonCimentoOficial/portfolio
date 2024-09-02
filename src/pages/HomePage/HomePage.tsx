@@ -214,7 +214,7 @@ const HomePage = (props: Props) => {
             {modalData && showModal && 
                 <ProjectModal 
                     title={modalData.title} 
-                    href='/teste'
+                    href={`/project/${modalData.id}/${modalData.title.toLowerCase().split(" ").join("-")}`}
                     type='anchor'
                     data={modalData} 
                     setCloseWindowState={(value) => setShowModal(!value)} 

@@ -2,6 +2,7 @@ import styles from "./PreviewCard.module.css"
 import { ProjectType } from '../../../types/projectType'
 import { PiHeart } from "react-icons/pi";
 import { SiTypescript, SiJavascript, SiPython, SiHtml5, SiCss3 } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 type Props = {
     data: ProjectType
@@ -39,7 +40,7 @@ const PreviewCard = ({ data, setState}: Props) => {
                         <div className={styles.containerLogo}>
                             <img className={styles.imageLogo} src={data.images.logo.url} alt="" />
                         </div>
-                        <span className={styles.projectTitle} onClick={handleClick}>{title}</span>
+                        <Link to={`/project/${data.id}/${data.title.toLowerCase().split(" ").join("-")}`} className={styles.projectTitle}>{title}</Link>
                     </div>
                     <div className={styles.containerIcons}>
                         {data.statistics.html > 0 && 
