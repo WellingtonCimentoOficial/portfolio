@@ -154,9 +154,7 @@ const HomePage = (props: Props) => {
                     <TitleDescLayout title={projects.title} description={projects.description}>
                         <div className={`${styles.containerSectionBody} ${styles.containerProjectsBody}`}>
                             {projectData.map(project => (
-                                Array.from(Array(9)).map((_, index) => (
-                                    <PreviewCard key={project.id + index} data={project} setState={handleModal} />
-                                ))
+                                <PreviewCard key={project.id} data={project} setState={handleModal} />
                             ))}
                         </div>
                     </TitleDescLayout>
@@ -212,6 +210,8 @@ const HomePage = (props: Props) => {
             {modalData && showModal && 
                 <ProjectModal 
                     title={modalData.title} 
+                    href='/teste'
+                    type='anchor'
                     data={modalData} 
                     setCloseWindowState={(value) => setShowModal(!value)} 
                 />

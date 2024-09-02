@@ -41,7 +41,7 @@ const PreviewCard = ({ data, setState}: Props) => {
                 <div className={styles.body}>
                     <div className={styles.containerBodyHeader}>
                         <div className={styles.containerLogo}>
-                            <img className={styles.imageLogo} src={data.images.main.url} alt="" />
+                            <img className={styles.imageLogo} src={data.images.logo.url} alt="" />
                         </div>
                         <span className={styles.projectTitle} onClick={handleClick}>{title}</span>
                     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styles from './mainModal.module.css'
-import { PiPlus } from "react-icons/pi";
+import { PiPlus, PiLinkBold } from "react-icons/pi";
 import { mainModalType } from '../../../types/mainModalType';
 import { useScrollBlock } from '../../../hooks/useBlockScroll';
 
@@ -9,7 +9,7 @@ type Props = mainModalType & {
     children?: React.ReactNode
 }
 
-const MainModal = ({setCloseWindowState, children, title}: Props) => {
+const MainModal = ({setCloseWindowState, children, title, type, href='/'}: Props) => {
     const { scrollBlock } = useScrollBlock()
     const windowScrollRef = useRef<{top: number, left: number}>({top: window.scrollY, left: window.scrollX})
 
@@ -28,7 +28,14 @@ const MainModal = ({setCloseWindowState, children, title}: Props) => {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <span className={styles.title}>{title}</span>
+                    {type === 'text' ? (
+                        <span className={styles.title}>{title}</span>
+                    ):(
+                        <a href={href} className={`${styles.title} ${styles.titleAnchor}`}>
+                            {title}
+                            <PiLinkBold className={styles.titleIcon} />
+                        </a>
+                    )}
                     <div className={styles.containerClose} onClick={() => setCloseWindowState(true)}>
                         <PiPlus className={styles.closeIcon} />
                     </div>

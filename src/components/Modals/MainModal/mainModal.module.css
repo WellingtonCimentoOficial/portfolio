@@ -50,6 +50,16 @@
 .title {
     font-size: 1.3rem;
     font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.titleAnchor:hover {
+    text-decoration: underline;
+}
+.titleIcon {
+    font-size: 1.3rem;
 }
 .containerClose {
     display: flex;
