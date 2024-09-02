@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './MainHeader.module.css'
 import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../Buttons/MainButton/MainButton'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 type MenuType = {
@@ -48,7 +49,7 @@ const MainHeader = (props: Props) => {
             <WidthLayout>
                 <div className={styles.container}>
                     <div className={styles.flexItem}>
-                        <h1 className={styles.title}>Portifólio</h1>
+                        <Link to='/' className={styles.title}>Portifólio</Link>
                     </div>
                     <nav className={styles.navigationContainer}>
                         <ul className={styles.navigationList}>

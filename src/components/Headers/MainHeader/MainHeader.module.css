@@ -17,6 +17,8 @@
 .title {
     font-size: 2rem;
     color: var(--principal-color);
+    font-weight: bolder;
+    text-decoration: none;
 }
 .navigationContainer {
 
@@ -40,4 +42,10 @@
     color: var(--black-color-hover);
     transform: scale(1.02);
     cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .navigationContainer {
+        display: none;
+    }
 }

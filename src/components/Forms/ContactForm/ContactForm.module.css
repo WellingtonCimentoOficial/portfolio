@@ -32,7 +32,6 @@
 .input {
     flex: 1;
     padding: 10px 20px;
-    width: 100%;
     border: 1.5px solid rgb(210, 210, 210);
     transition: 0.25s;
     outline: none;
@@ -45,4 +44,13 @@
 }
 .footer {
 
+}
+
+@media (max-width: 900px) {
+    .headerItem {
+        flex-wrap: wrap;
+    }
+    /* .inputContainer, .input {
+        max-width: 100%;
+    } */
 }

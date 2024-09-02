@@ -8,10 +8,12 @@
 }
 .wrapper {
     min-width: 130px;
-    max-width: 200px;
+    width: 100%;
     user-select: none;
+    background-color: transparent;
 }
 .container {
+    background-color: transparent;
     position: relative;
 }
 .header {

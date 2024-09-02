@@ -8,6 +8,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 100px 0px;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
 }
 .containerOneItem {
     width: 50%;
@@ -69,7 +71,9 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
+    /* background-color: red; */
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 .containerTechStackBody {
     display: flex;
@@ -101,4 +105,14 @@
 .containerProjectsFilters {
     background-color: transparent;
     margin-top: 40px;
+}
+
+
+@media (max-width: 900px) {
+    .containerContactBody, .containerOneItem {
+        width: 100%;
+    }
+    .containerOne {
+        justify-content: center;
+    }
 }
