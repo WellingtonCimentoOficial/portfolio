@@ -27,6 +27,7 @@ import { projectData } from '../../datas/projectsData'
 import PreviewCard from '../../components/Cards/PreviewCard/PreviewCard'
 import { ProjectType } from '../../types/projectType'
 import ProjectModal from '../../components/Modals/ProjectModal/ProjectModal'
+import BarFilter from '../../components/Filters/BarFilter/BarFilter'
 
 type Props = {}
 type defaultType = {
@@ -152,6 +153,9 @@ const HomePage = (props: Props) => {
             <section id='projects' className={`${styles.containerSection} ${styles.containerProjects}`}>
                 <WidthLayout>
                     <TitleDescLayout title={projects.title} description={projects.description}>
+                        <div className={styles.containerProjectsFilters}>
+                            <BarFilter />
+                        </div>
                         <div className={`${styles.containerSectionBody} ${styles.containerProjectsBody}`}>
                             {projectData.map(project => (
                                 <PreviewCard key={project.id} data={project} setState={handleModal} />

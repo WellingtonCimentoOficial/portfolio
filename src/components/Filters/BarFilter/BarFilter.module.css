@@ -1,0 +1,19 @@
+.wrapper {
+    width: 100%;
+    background-color: transparent;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.flexItemStart {
+    background-color: transparent;
+}
+.flexItemCenter {
+    width: 600px;
+}
+.flexItemEnd {
+    background-color: transparent;
+}

@@ -1,0 +1,37 @@
+.wrapper {
+    background-color: transparent;
+    /* flex: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    user-select: none;
+}
+.flexLineController {
+    display: flex;
+    cursor: pointer;
+}
+.lineList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;  /* Esconde barra no Internet Explorer e Edge */
+    scrollbar-width: none; 
+    background-color: transparent;
+}
+.lineList::-webkit-scrollbar {
+    display: none;  /* Esconde barra no Chrome, Safari e outros */
+}
+.lineItem {
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.lineItem:hover {
+    color: var(--principal-color);
+}

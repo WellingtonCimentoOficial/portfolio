@@ -116,13 +116,13 @@
     font-size: 0.8rem;
 }
 .icon {
-    font-size: 1.35rem;
+    font-size: 1.20rem;
     transition: 0.3s;
     pointer-events: none;
 }
 .containerImage, .flexImage, .containerOver {
     border-radius: 5px;
 }
-.containerSection, .projectTitle, .flexIconWrapper {
+.containerSection, .projectTitle {
     cursor: pointer;
 }

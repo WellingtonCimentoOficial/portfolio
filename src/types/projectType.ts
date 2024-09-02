@@ -4,11 +4,11 @@ export type Image = {
 }
 
 type Statistics = {
-    python: number
-    typescript: number
-    javascript: number
     html: number
     css: number
+    javascript: number
+    typescript: number
+    python: number
 }
 
 export interface ProjectType {
