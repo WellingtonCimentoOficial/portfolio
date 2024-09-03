@@ -48,10 +48,6 @@ const MainHeader = (props: Props) => {
         }
     }
 
-    const handleEffect = () => {
-        setShowMenuMobile(oldValue => !oldValue)
-    }
-
     useEffect(() => {
         const handleScreen = () => {
             if(window.innerWidth > 900){
@@ -71,6 +67,11 @@ const MainHeader = (props: Props) => {
     useEffect(() => {
         if(showMenuMobile && startShowEffect && navigationContainerRef.current){
             navigationContainerRef.current.style.display = "block"
+            document.body.style.overflowY = "hidden"
+            document.documentElement.style.overflowY = "hidden"
+        }else{
+            document.body.style.overflowY = "auto"
+            document.documentElement.style.overflowY = "auto"
         }
     }, [showMenuMobile, startShowEffect])
 
@@ -78,7 +79,7 @@ const MainHeader = (props: Props) => {
         <div className={styles.wrapper}>
             <WidthLayout>
                 <div className={styles.container}>
-                    <div className={styles.containerBurgerMenu} onClick={handleEffect}>
+                    <div className={styles.containerBurgerMenu} onClick={() => setShowMenuMobile(oldValue => !oldValue)}>
                         <PiListBold className={styles.burgerIcon} style={showMenuMobile ? {fill: "white"} : {}}/>
                     </div>
                     <div className={styles.flexItem}>
@@ -87,7 +88,7 @@ const MainHeader = (props: Props) => {
                     <nav ref={navigationContainerRef} className={`${styles.navigationContainer} ${showMenuMobile && startShowEffect ? styles.showEffect : startShowEffect ? styles.hiddenEffect : null}`}>
                         <ul className={styles.navigationList}>
                             {menu.map(((item, index) => (
-                                <li key={index} className={styles.navigationListLi}>
+                                <li key={index} className={styles.navigationListLi} onClick={() => showMenuMobile && startShowEffect && setShowMenuMobile(false)}>
                                     <a className={styles.navigationListLiLink} href={item.href} onClick={(e) => scrollToSection(item.href, e)}>{item.name}</a>
                                 </li>
                             )))}

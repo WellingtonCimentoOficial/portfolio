@@ -25,7 +25,6 @@
     top: 0;
 }
 .container {
-    position: relative;
     padding: 13px 0px;
     display: flex;
     align-items: center;
@@ -33,10 +32,11 @@
     gap: 20px;
 }
 .containerBurgerMenu {
-    position: fixed;
+    position: sticky;
     display: none;
     cursor: pointer;
     z-index: 1;
+    background-color: transparent;
 }
 .burgerIcon {
     font-size: 2.2rem;
