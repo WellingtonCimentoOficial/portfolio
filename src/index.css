@@ -25,4 +25,5 @@ html, body {
     background-color: var(--white-color);
     color: var(--black-color);
     transition: 0.25s;
+    overflow-x: hidden;
 }

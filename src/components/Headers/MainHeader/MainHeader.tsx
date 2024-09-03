@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './MainHeader.module.css'
 import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../Buttons/MainButton/MainButton'
 import { Link } from 'react-router-dom'
+import { PiListBold } from "react-icons/pi";
 
 type Props = {}
 type MenuType = {
@@ -11,6 +12,9 @@ type MenuType = {
 }
 
 const MainHeader = (props: Props) => {
+    const [showMenuMobile, setShowMenuMobile] = useState<boolean>(false)
+    const [startShowEffect, setStartShowEffect] = useState<boolean>(false)
+    const navigationContainerRef = useRef<HTMLDListElement>(null)
 
     const menu: MenuType[] = [
         {
@@ -44,14 +48,43 @@ const MainHeader = (props: Props) => {
         }
     }
 
+    const handleEffect = () => {
+        setShowMenuMobile(oldValue => !oldValue)
+    }
+
+    useEffect(() => {
+        const handleScreen = () => {
+            if(window.innerWidth > 900){
+                setStartShowEffect(false)
+            }else{
+                setStartShowEffect(true)
+            }
+        }
+
+        handleScreen()
+
+        window.addEventListener("resize", handleScreen)
+
+        return () => window.removeEventListener("resize", handleScreen)
+    }, [])
+
+    useEffect(() => {
+        if(showMenuMobile && startShowEffect && navigationContainerRef.current){
+            navigationContainerRef.current.style.display = "block"
+        }
+    }, [showMenuMobile, startShowEffect])
+
     return (
         <div className={styles.wrapper}>
             <WidthLayout>
                 <div className={styles.container}>
+                    <div className={styles.containerBurgerMenu} onClick={handleEffect}>
+                        <PiListBold className={styles.burgerIcon} style={showMenuMobile ? {fill: "white"} : {}}/>
+                    </div>
                     <div className={styles.flexItem}>
                         <Link to='/' className={styles.title}>Portifólio</Link>
                     </div>
-                    <nav className={styles.navigationContainer}>
+                    <nav ref={navigationContainerRef} className={`${styles.navigationContainer} ${showMenuMobile && startShowEffect ? styles.showEffect : startShowEffect ? styles.hiddenEffect : null}`}>
                         <ul className={styles.navigationList}>
                             {menu.map(((item, index) => (
                                 <li key={index} className={styles.navigationListLi}>

@@ -126,3 +126,10 @@
 .containerSection, .projectTitle {
     cursor: pointer;
 }
+
+@media (max-width: 1300px){
+    .flexImage {
+        width: 100%;
+        height: auto;
+    }
+}

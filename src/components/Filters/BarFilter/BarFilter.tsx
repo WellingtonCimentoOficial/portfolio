@@ -25,11 +25,13 @@ const BarFilter = (props: Props) => {
                 <div className={styles.flexItemStart}>
                     <BasicSelect data={selectData} current={teste} setState={setTeste} />
                 </div>
-                <div className={styles.flexItemCenter}>
-                    <LineCarousel data={lineData} />
-                </div>
-                <div className={styles.flexItemEnd}>
-                    <BasicSelect data={selectData} current={teste} setState={setTeste} />
+                <div className={styles.flexContainer}>
+                    <div className={styles.flexItemCenter}>
+                        <LineCarousel data={lineData} />
+                    </div>
+                    <div className={styles.flexItemEnd}>
+                        <BasicSelect data={selectData} current={teste} setState={setTeste} />
+                    </div>
                 </div>
             </div>
         </div>

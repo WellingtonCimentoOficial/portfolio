@@ -1,3 +1,19 @@
+@keyframes showMenuMobile {
+    0% {
+        transform: scale(1, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+@keyframes hideMenuMobile {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1, 0);
+    }
+}
 .wrapper {
     background-color: white;
     width: 100vw;
@@ -9,10 +25,22 @@
     top: 0;
 }
 .container {
+    position: relative;
     padding: 13px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+}
+.containerBurgerMenu {
+    position: fixed;
+    display: none;
+    cursor: pointer;
+    z-index: 1;
+}
+.burgerIcon {
+    font-size: 2.2rem;
+    fill: var(--principal-color);
 }
 .title {
     font-size: 2rem;
@@ -36,7 +64,7 @@
     text-decoration: none;
     color: var(--black-color);
     font-size: 1rem;
-    transition: 10s;
+    transition: 0.25s;
 }
 .navigationListLi:hover, .navigationListLiLink:hover {
     color: var(--black-color-hover);
@@ -44,8 +72,52 @@
     cursor: pointer;
 }
 
+.showEffect {
+    animation: showMenuMobile 0.25s ease-in-out forwards;
+    transform-origin: top;
+}
+.hiddenEffect {
+    animation: hideMenuMobile 0.25s ease-in-out forwards;
+    transform-origin: top;
+}
+
 @media (max-width: 900px) {
     .navigationContainer {
         display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        /* display: none; */
+        background-color: var(--principal-color);
+        width: 100vw;
+        padding: 20px 0px;
+    }
+    .navigationList {
+        margin-top: 55px;
+        padding-bottom: 20px;
+        flex-direction: column;
+        background-color: transparent;
+        /* gap: 0; */
+    }
+    .navigationListLi {
+        /* width: 100%;
+        background-color: transparent;
+        display: flex; */
+    }
+    .navigationListLiLink {
+        /* width: 100%;
+        background-color: transparent;
+        padding: 10px;
+        text-align: center; */
+        color: white;
+    }
+    .container {
+        justify-content: flex-start;
+    }
+    .containerBurgerMenu {
+        display: flex;
+    }
+    .flexItem {
+        margin: auto;
     }
 }
