@@ -98,9 +98,11 @@ const MainHeader = (props: Props) => {
                                 </li>
                             )))}
                             <div onClick={(e) => scrollToSection("projects", e)}>
-                                <MainButton type='anchor' filltype='borderonly' href='/'> 
-                                    Projetos
-                                </MainButton>
+                                <div onClick={() => showMenuMobile && startShowEffect && setShowMenuMobile(false)}>
+                                    <MainButton type='anchor' filltype='borderonly' href='/'> 
+                                        Projetos
+                                    </MainButton>
+                                </div>
                             </div>
                         </ul>
                     </nav>
