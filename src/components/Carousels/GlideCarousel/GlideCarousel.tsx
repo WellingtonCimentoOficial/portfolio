@@ -1,17 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './GlideCarousel.module.css'
 import { Image } from '../../../types/projectType'
 import { PiArrowLeft, PiArrowRight } from "react-icons/pi";
+
+type ThumbnailBarPositionType = 'vertical'|'horizontal'
 
 type Props = {
     mainData: Image
     data: Image[]
     maxHeight?: number
-    thumbnailBarPosition?: 'vertical'|'horizontal'
+    thumbnailBarPosition?: ThumbnailBarPositionType
 }
 
 const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizontal'}: Props) => {
     const [mainImage, setMainImage] = useState<Image>(mainData)
+    const [thumbnailBarPositionState, setThumbnailBarPositionState] = useState<ThumbnailBarPositionType>(thumbnailBarPosition)
     const thumbsRef = useRef<{id: number, element: HTMLDivElement}[]>([])
 
     const handleChange = ((direction: "next"|"previous") => {
@@ -39,24 +42,41 @@ const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizon
         }
     })
 
+    useEffect(() => {
+        const handleChange = () => {
+            if(window.innerWidth > 1200){
+                setThumbnailBarPositionState(thumbnailBarPosition)
+            }else{
+                setThumbnailBarPositionState("horizontal")
+            }
+        }
+
+        handleChange()
+
+        window.addEventListener("resize", handleChange)
+
+        return () => window.removeEventListener("resize", handleChange)
+
+    }, [thumbnailBarPosition])
+
     return (
         <div className={styles.wrapper}>
-            <div className={`${styles.container} ${thumbnailBarPosition === 'horizontal' ? styles.thumbnailBarHorizontal : styles.thumbnailBarVertical}`}>
+            <div className={`${styles.container} ${thumbnailBarPositionState === 'horizontal' ? styles.thumbnailBarHorizontal : styles.thumbnailBarVertical}`}>
                 <div className={styles.containerMainImage}>
                     <img 
-                        className={`${styles.mainImage} ${thumbnailBarPosition === 'horizontal' ? styles.mainImageHorizontal : styles.mainImageVertical}`} 
+                        className={`${styles.mainImage} ${thumbnailBarPositionState === 'horizontal' ? styles.mainImageHorizontal : styles.mainImageVertical}`} 
                         src={mainImage.url} 
                         // style={{maxHeight: `${maxHeight}px` || '500px'}} 
                         alt="" 
                     />
                 </div>
-                <div className={`${styles.containerOtherImages} ${thumbnailBarPosition === 'vertical' ? styles.containerOtherImagesVertical : null}`}>
+                <div className={`${styles.containerOtherImages} ${thumbnailBarPositionState === 'vertical' ? styles.containerOtherImagesVertical : null}`}>
                     <div className={styles.flexController} onClick={() => handleChange("previous")}>
-                        <PiArrowLeft className={`${styles.flexControllerIcon} ${thumbnailBarPosition === 'vertical' ? styles.flexControllerIconVertical : null}`} />
+                        <PiArrowLeft className={`${styles.flexControllerIcon} ${thumbnailBarPositionState === 'vertical' ? styles.flexControllerIconVertical : null}`} />
                     </div>
                     <div className={
                         `${styles.containerOtherImagesScroll} 
-                        ${thumbnailBarPosition === 'horizontal' ? styles.containerOtherImagesScrollHorizontal : styles.containerOtherImagesScrollVertical}`
+                        ${thumbnailBarPositionState === 'horizontal' ? styles.containerOtherImagesScrollHorizontal : styles.containerOtherImagesScrollVertical}`
                         }>
                         {data.map((img, index) => (
                             <div 
@@ -75,7 +95,7 @@ const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizon
                         ))}
                     </div>
                     <div className={styles.flexController} onClick={() => handleChange("next")}>
-                        <PiArrowRight className={`${styles.flexControllerIcon} ${thumbnailBarPosition === 'vertical' ? styles.flexControllerIconVertical : null}`}  />
+                        <PiArrowRight className={`${styles.flexControllerIcon} ${thumbnailBarPositionState === 'vertical' ? styles.flexControllerIconVertical : null}`}  />
                     </div>
                 </div>
             </div>

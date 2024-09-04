@@ -3,7 +3,7 @@ import styles from './MainHeader.module.css'
 import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../Buttons/MainButton/MainButton'
 import { Link } from 'react-router-dom'
-import { PiListBold } from "react-icons/pi";
+import { PiListBold, PiPlusBold } from "react-icons/pi";
 
 type Props = {}
 type MenuType = {
@@ -80,7 +80,12 @@ const MainHeader = (props: Props) => {
             <WidthLayout>
                 <div className={styles.container}>
                     <div className={styles.containerBurgerMenu} onClick={() => setShowMenuMobile(oldValue => !oldValue)}>
-                        <PiListBold className={styles.burgerIcon} style={showMenuMobile ? {fill: "white"} : {}}/>
+                        {showMenuMobile ?(
+                            <PiPlusBold className={styles.burgerIcon} style={{fill: "white", transform: "rotate(45deg)"}}/>
+                        ):(
+                            <PiListBold className={styles.burgerIcon} />
+                        )
+                    }
                     </div>
                     <div className={styles.flexItem}>
                         <Link to='/' className={styles.title}>Portifólio</Link>

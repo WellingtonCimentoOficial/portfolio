@@ -27,3 +27,9 @@ html, body {
     transition: 0.25s;
     overflow-x: hidden;
 }
+
+@media (max-width: 900px) {
+    html, body {
+        font-size: 14px;
+    }
+}
