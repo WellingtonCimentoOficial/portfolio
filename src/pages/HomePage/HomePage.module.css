@@ -78,6 +78,7 @@
     /* background-color: red; */
     overflow-y: hidden;
     overflow-x: auto;
+    scroll-behavior: smooth;
 }
 .containerTechStackBody {
     display: flex;
@@ -105,11 +106,35 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
-}
-.containerProjectsFilters {
+}.containerProjectsFilters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
     background-color: transparent;
     margin-top: 40px;
 }
+.containerProjectsFiltersFlexItemStart {
+    background-color: transparent;
+}
+.containerProjectsFiltersGroup {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+.containerProjectsFiltersFlexItemCenter {
+    width: 600px;
+    margin: auto;
+    background-color: transparent;
+}
+.containerProjectsFiltersFlexItemEnd {
+    background-color: transparent;
+}
+
 
 
 @media (max-width: 1550px){
@@ -121,7 +146,15 @@
         padding-top: 0;
     }
 }
-
+@media (max-width: 1100px) {
+    .containerProjectsFiltersFlexItemCenter, .containerProjectsFiltersFlexItemStart, .containerProjectsFiltersFlexItemEnd, .containerProjectsFiltersGroup {
+        width: 100%;
+        max-width: 100%;
+    }
+    .containerProjectsFilters {
+        flex-wrap: wrap-reverse;
+    }
+}
 @media (max-width: 900px) {
     .containerContactBody {
         width: 100%;

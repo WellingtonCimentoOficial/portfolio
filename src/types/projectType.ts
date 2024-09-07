@@ -22,4 +22,5 @@ export interface ProjectType {
     }
     github: string
     statistics: Statistics
+    isFavorite: boolean
 }

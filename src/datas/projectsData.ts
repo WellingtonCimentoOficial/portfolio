@@ -141,7 +141,8 @@ export const projectData: ProjectType[] = [
             javascript: 1.6,
             css: 10.6,
             html: 1.2
-        }
+        },
+        isFavorite: true
     },
     {
         id: 1,
@@ -170,7 +171,8 @@ export const projectData: ProjectType[] = [
             javascript: 0,
             css: 0,
             html: 0
-        }
+        },
+        isFavorite: false
     },
     {
         id: 2,
@@ -199,7 +201,8 @@ export const projectData: ProjectType[] = [
             javascript: 0,
             css: 0,
             html: 0
-        }
+        },
+        isFavorite: false
     },
     {
         id: 3,
@@ -244,7 +247,8 @@ export const projectData: ProjectType[] = [
             javascript: 7.5,
             css: 29.2,
             html: 25.5
-        }
+        },
+        isFavorite: false
     },
     {
         id: 4,
@@ -281,7 +285,8 @@ export const projectData: ProjectType[] = [
             javascript: 0,
             css: 0,
             html: 0
-        }
+        },
+        isFavorite: false
     },
     {
         id: 5,
@@ -570,6 +575,7 @@ export const projectData: ProjectType[] = [
             javascript: 27.3,
             css: 20.1,
             html: 32.9
-        }
+        },
+        isFavorite: true
     },
 ]

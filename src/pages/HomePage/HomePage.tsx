@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import styles from './HomePage.module.css'
 import WidthLayout from '../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../components/Buttons/MainButton/MainButton'
@@ -28,7 +28,8 @@ import { projectData } from '../../datas/projectsData'
 import PreviewCard from '../../components/Cards/PreviewCard/PreviewCard'
 import { ProjectType } from '../../types/projectType'
 import ProjectModal from '../../components/Modals/ProjectModal/ProjectModal'
-import BarFilter from '../../components/Filters/BarFilter/BarFilter'
+import BasicSelect, { DefaultSelectType } from '../../components/Selects/BasicSelect/BasicSelect'
+import LineCarousel from '../../components/Carousels/LineCarousel/LineCarousel'
 
 type Props = {}
 type defaultType = {
@@ -48,21 +49,18 @@ type SoftSkillsType = defaultType & {
 }
 
 const HomePage = (props: Props) => {
-    const [modalData, setModalData] = useState<ProjectType|null>(null)
-    const [showModal, setShowModal] = useState<boolean>(false)
-
-    const projects: defaultType = {
+    const projectsSection: defaultType = {
         title: "Projetos",
         description: "Uma coleção dos meus projetos pessoais que demonstram minhas habilidades e paixão por desenvolver soluções criativas e funcionais."
     }
 
-    const techStack: TechStackType = {
+    const techStackSection: TechStackType = {
         title: "Tech Stack",
         description: "Tecnologias que eu utilizo para construir soluções robustas, escaláveis e inovadoras. A combinação certa de ferramentas do mercado, transformando suas ideias em produtos digitais de alta qualidade.",
         data: [reactImage, cssImage, djangoImage, htmlImage, jsImage, mySqlImage, postgresSqlImage, pythonImage, typeScriptImage, dockerImage, gitImage, gitHubImage]
     }
 
-    const softSkills: SoftSkillsType = {
+    const softSkillsSection: SoftSkillsType = {
         title: "Soft Skills",
         description: "Competências essenciais que complementam minhas habilidades técnicas, facilitando a comunicação, a colaboração e a resolução de problemas. Essas qualidades me permitem trabalhar de forma eficaz em equipe, adaptar-me rapidamente a novas situações e manter um foco constante na entrega de resultados de alta qualidade.",
         data: [
@@ -117,15 +115,46 @@ const HomePage = (props: Props) => {
         ]
     }
 
-    const contact: defaultType = {
+    const contactSection: defaultType = {
         title: "Contato",
         description: "Pronto para novas oportunidades e desafios? Entre em contato para discutir como posso contribuir com suas equipes e projetos."
     }
+
+    const selectDataOne: DefaultSelectType[] = [
+        {id: 0, text: "Popular"},
+        {id: 1, text: "Favoritos"},
+    ]
+    const selectDataTwo: DefaultSelectType[] = [
+        {id: 0, text: "Relevância"},
+    ]
+    const lineData: DefaultSelectType[] = [
+        {id: 0, text: "HTML"},
+        {id: 1, text: "Javascript"},
+        {id: 2, text: "Css"},
+        {id: 3, text: "Python"},
+        {id: 4, text: "TypeScript"},
+    ]
+
+    const [projects, setProjects] = useState<ProjectType[]>(projectData)
+    const [modalData, setModalData] = useState<ProjectType|null>(null)
+    const [showModal, setShowModal] = useState<boolean>(false)
+    const [filterOne, setFilterOne] = useState<DefaultSelectType>(selectDataOne[0])
+    const [filterTwo, setFilterTwo] = useState<DefaultSelectType>(selectDataTwo[0])
 
     const handleModal = (data: ProjectType) => {
         setModalData(data)
         setShowModal(true)
     }
+
+    useEffect(() => {
+        setProjects(oldValue => {
+            if(filterOne.id === 1){
+                const valueUpdated = oldValue.filter(project => project.isFavorite)
+                return valueUpdated
+            }
+            return projectData
+        })
+    }, [filterOne])
 
     return (
         <div className={styles.wrapper}>
@@ -153,12 +182,22 @@ const HomePage = (props: Props) => {
             </div>
             <section id='projects' className={`${styles.containerSection} ${styles.containerProjects}`}>
                 <WidthLayout>
-                    <TitleDescLayout title={projects.title} description={projects.description}>
+                    <TitleDescLayout title={projectsSection.title} description={projectsSection.description}>
                         <div className={styles.containerProjectsFilters}>
-                            <BarFilter />
+                            <div className={styles.containerProjectsFiltersFlexItemStart}>
+                                <BasicSelect data={selectDataOne} current={filterOne} setState={setFilterOne} />
+                            </div>
+                            <div className={styles.containerProjectsFiltersGroup}>
+                                <div className={styles.containerProjectsFiltersFlexItemCenter}>
+                                    <LineCarousel data={lineData} />
+                                </div>
+                                <div className={styles.containerProjectsFiltersFlexItemEnd}>
+                                    <BasicSelect data={selectDataTwo} current={filterTwo} setState={setFilterTwo} />
+                                </div>
+                            </div>
                         </div>
                         <div className={`${styles.containerSectionBody} ${styles.containerProjectsBody}`}>
-                            {projectData.map(project => (
+                            {projects.map(project => (
                                 <PreviewCard key={project.id} data={project} setState={handleModal} />
                             ))}
                         </div>
@@ -167,9 +206,9 @@ const HomePage = (props: Props) => {
             </section>
             <section id='techstack' className={`${styles.containerSection} ${styles.containerTechStack}`}>
                 <WidthLayout>
-                    <TitleDescLayout title={techStack.title} description={techStack.description}>
+                    <TitleDescLayout title={techStackSection.title} description={techStackSection.description}>
                         <div className={`${styles.containerSectionBody} ${styles.containerTechStackBody}`}>
-                            {techStack.data.map((image, index) => (
+                            {techStackSection.data.map((image, index) => (
                                 <div key={index} className={styles.containerTechStackBodyItem}>
                                     <img className={styles.containerTechStackBodyItemImage} src={image} alt="" />
                                 </div>
@@ -180,14 +219,14 @@ const HomePage = (props: Props) => {
             </section>
             <section id='softskills' className={`${styles.containerSection} ${styles.containerSoftSkills}`}>
                 <WidthLayout>
-                    <TitleDescLayout title={softSkills.title} description={softSkills.description}>
+                    <TitleDescLayout title={softSkillsSection.title} description={softSkillsSection.description}>
                         <div className={`${styles.containerSectionBody} ${styles.containerSoftSkillsBody}`}>
                             {(() => {
                                 const quantityPerRow = 4
                                 return (
-                                    Array.from(Array(softSkills.data.length / quantityPerRow)).map((_, indexArr) => (
+                                    Array.from(Array(softSkillsSection.data.length / quantityPerRow)).map((_, indexArr) => (
                                         <div className={styles.containerSoftSkillsBodyItem} key={indexArr}>
-                                            {softSkills.data.slice(indexArr * quantityPerRow, (indexArr + 1) * quantityPerRow).map((skill, index) => (
+                                            {softSkillsSection.data.slice(indexArr * quantityPerRow, (indexArr + 1) * quantityPerRow).map((skill, index) => (
                                                 <SimpleCard 
                                                 key={indexArr * index}
                                                 title={skill.title} 
@@ -205,7 +244,7 @@ const HomePage = (props: Props) => {
             </section>
             <section id='contact' className={`${styles.containerSection} ${styles.containerContact}`}>
                 <WidthLayout>
-                    <TitleDescLayout title={contact.title} description={contact.description}>
+                    <TitleDescLayout title={contactSection.title} description={contactSection.description}>
                         <div className={`${styles.containerSectionBody} ${styles.containerContactBody}`}>
                             <ContactForm />
                         </div>
