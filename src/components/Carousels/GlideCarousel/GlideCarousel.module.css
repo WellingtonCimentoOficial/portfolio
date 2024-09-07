@@ -10,6 +10,7 @@
     user-select: none;
     max-width: 100%;
     max-height: 100%;
+    background-color: transparent;
 }
 .container {
     display: flex;
@@ -25,14 +26,15 @@
     flex-direction: row-reverse;
 }
 .containerMainImage {
-    width: 100%;
+    max-width: 100%;
     max-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
 }
 .mainImage {
-    width: 100%;
+    max-width: 100%;
     max-height: 100%;
     object-fit: cover;
     animation: showMainImage, 0.5s ease-in-out forwards;
