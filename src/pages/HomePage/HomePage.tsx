@@ -16,6 +16,7 @@ import typeScriptImage from '../../assets/typescript.png'
 import dockerImage from '../../assets/docker.png'
 import gitHubImage from '../../assets/github.png'
 import gitImage from '../../assets/git.png'
+import cvPdf from '../../assets/curriculo.pdf'
 import SimpleCard from '../../components/Cards/SimpleCard/SimpleCard'
 import { PiHandshakeThin, PiMegaphoneThin, PiCheckThin,
     PiCardsThreeThin, PiBrainThin, PiBriefcaseThin, PiCloudThin,
@@ -141,7 +142,7 @@ const HomePage = (props: Props) => {
                                 <MainButton type='anchor' href='https://github.com/WellingtonCimentoOficial' disableHoverEffect filltype='borderonly' icon={<FaGithub />} backgroundColor='black' color='white'>
                                     GitHub
                                 </MainButton>
-                                <MainButton type='anchor' href='https://drive.usercontent.google.com/u/0/uc?id=1bB8kCRkQx6Sovw5QWzXF1xendnB70ei4&export=download' disableHoverEffect>Baixar CV</MainButton>
+                                <MainButton type='anchor' href={cvPdf} target="_blank" disableHoverEffect>Baixar CV</MainButton>
                             </div>
                         </div>
                         <div className={styles.containerOneimage}>

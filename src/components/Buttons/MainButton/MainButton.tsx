@@ -11,9 +11,10 @@ type Props = {
     icon?: React.ReactElement
     backgroundColor?: string
     color?: string
+    target?: '_self'|'_blank'
 }
 
-const MainButton: React.FC<Props> = ({children, href="/", filltype='default', disableHoverEffect, type, submit, icon, backgroundColor='var(--principal-color)', color='white'}: Props) => {
+const MainButton: React.FC<Props> = ({children, href="/", filltype='default', disableHoverEffect, type, submit, icon, backgroundColor='var(--principal-color)', color='white', target='_self'}: Props) => {
     const buttonRef = useRef<HTMLButtonElement>(null)
     const buttonAnchorRef = useRef<HTMLAnchorElement>(null)
     const iconRef = useRef<HTMLDivElement>(null)
@@ -75,7 +76,7 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
             )
         case 'anchor':
             return (
-                <a ref={buttonAnchorRef} {...defaultProps} href={href}>
+                <a ref={buttonAnchorRef} {...defaultProps} href={href} target={target} rel="noopener noreferrer">
                     <>
                         {icon &&
                             <div ref={iconRef} className={styles.containerIcon}>
