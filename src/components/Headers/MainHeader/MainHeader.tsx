@@ -90,8 +90,8 @@ const MainHeader = (props: Props) => {
                     </div>
                     <div className={styles.flexItem}>
                         <Link to='/' className={styles.title}>
-                            {/* <IconLogo /> */}
-                            Portfólio
+                            <IconLogo className={styles.titleLogo} />
+                            <span className={styles.titleText}>Portfólio</span>
                         </Link>
                     </div>
                     <nav ref={navigationContainerRef} className={`${styles.navigationContainer} ${showMenuMobile && startShowEffect ? styles.showEffect : startShowEffect ? styles.hiddenEffect : null}`}>
