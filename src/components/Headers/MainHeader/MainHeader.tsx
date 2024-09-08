@@ -4,6 +4,7 @@ import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../Buttons/MainButton/MainButton'
 import { Link } from 'react-router-dom'
 import { PiListBold, PiPlusBold } from "react-icons/pi";
+import IconLogo from '../../Logos/IconLogo/IconLogo'
 
 type Props = {}
 type MenuType = {
@@ -88,7 +89,10 @@ const MainHeader = (props: Props) => {
                     }
                     </div>
                     <div className={styles.flexItem}>
-                        <Link to='/' className={styles.title}>Portifólio</Link>
+                        <Link to='/' className={styles.title}>
+                            {/* <IconLogo /> */}
+                            Portfólio
+                        </Link>
                     </div>
                     <nav ref={navigationContainerRef} className={`${styles.navigationContainer} ${showMenuMobile && startShowEffect ? styles.showEffect : startShowEffect ? styles.hiddenEffect : null}`}>
                         <ul className={styles.navigationList}>

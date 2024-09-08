@@ -42,7 +42,7 @@
     gap: 10px;
 }
 .containerOneimage {
-    max-width: 600px;
+    max-width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,15 +137,6 @@
 
 
 
-@media (max-width: 1550px){
-    .containerOneItem {
-        width: 100%;
-    }
-    .containerOne {
-        justify-content: center;
-        padding-top: 0;
-    }
-}
 @media (max-width: 1100px) {
     .containerProjectsFiltersFlexItemCenter, .containerProjectsFiltersFlexItemStart, .containerProjectsFiltersFlexItemEnd, .containerProjectsFiltersGroup {
         width: 100%;
@@ -154,12 +145,27 @@
     .containerProjectsFilters {
         flex-wrap: wrap-reverse;
     }
+    .containerOneItem {
+        width: 100%;
+    }
+    .containerOne {
+        justify-content: center;
+        padding-top: 0;
+    }
+    .containerOneimage {
+        max-width: 50%;
+    }
 }
 @media (max-width: 900px) {
     .containerContactBody {
         width: 100%;
     }
+    .containerOneimage {
+        max-width: 70%;
+    }
     
+}
+@media (max-width: 600px) {
     .containerOneimage {
         max-width: 100%;
         width: 100%;
