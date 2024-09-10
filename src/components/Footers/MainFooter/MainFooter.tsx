@@ -48,36 +48,36 @@ const MainFooter = (props: Props) => {
         },
         {
             id: 2,
-            title: "Titulo",
+            title: "Tecnologias",
             data: [
                 {
                     id: 6,
-                    text: "Editar",
+                    text: "Python",
                     path: "/"
                 },
                 {
                     id: 7,
-                    text: "Editar",
+                    text: "Django",
                     path: "/"
                 },
                 {
                     id: 8,
-                    text: "Editar",
+                    text: "JavaScript",
                     path: "/"
                 },
                 {
                     id: 9,
-                    text: "Editar",
+                    text: "TypeScript",
                     path: "/"
                 },
                 {
                     id: 10,
-                    text: "Editar",
+                    text: "React JS",
                     path: "/"
                 },
                 {
                     id: 11,
-                    text: "Editar",
+                    text: "PostgreSQL",
                     path: "/"
                 },
             ]

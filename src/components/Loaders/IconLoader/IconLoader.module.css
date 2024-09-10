@@ -1,0 +1,31 @@
+@keyframes effect {
+    0% {
+        fill: #91014231;
+        transform: scale(1);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        fill: #910142;
+        transform: scale(1.05);
+    }
+}
+
+.container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    fill: white;
+    width: 100px;
+    animation: effect 2s infinite ease-in-out;
+    animation-direction: alternate;
+}
