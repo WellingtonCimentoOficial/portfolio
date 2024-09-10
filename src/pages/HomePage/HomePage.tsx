@@ -185,6 +185,7 @@ const HomePage = (props: Props) => {
                     <TitleDescLayout title={projectsSection.title} description={projectsSection.description}>
                         <div className={styles.containerProjectsFilters}>
                             <div className={styles.containerProjectsFiltersFlexItemStart}>
+                                <span className={styles.containerProjectsFiltersFlexItemText}>Mostrar:</span>
                                 <BasicSelect data={selectDataOne} current={filterOne} setState={setFilterOne} />
                             </div>
                             <div className={styles.containerProjectsFiltersGroup}>
@@ -192,6 +193,7 @@ const HomePage = (props: Props) => {
                                     <LineCarousel data={lineData} />
                                 </div>
                                 <div className={styles.containerProjectsFiltersFlexItemEnd}>
+                                    <span className={styles.containerProjectsFiltersFlexItemText}>Filtrar por:</span>
                                     <BasicSelect data={selectDataTwo} current={filterTwo} setState={setFilterTwo} />
                                 </div>
                             </div>

@@ -43,20 +43,7 @@
     fill: var(--principal-color);
 }
 .title {
-    font-size: 2rem;
-    color: var(--principal-color);
-    font-weight: bolder;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.titleLogo {
-    font-size: 6rem;
-    fill: var(--principal-color);
-}
-.titleText {
-    color: var(--principal-color);
 }
 .navigationContainer {
 
