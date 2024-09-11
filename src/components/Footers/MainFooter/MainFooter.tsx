@@ -109,8 +109,8 @@ const MainFooter = (props: Props) => {
             data: [
                 {
                     id: 0,
-                    text: "Formulário",
-                    path: "#contact"
+                    text: "Enviar E-mail",
+                    path: "mailto:contato@wellingtoncimento.com"
                 },
             ]
         },
