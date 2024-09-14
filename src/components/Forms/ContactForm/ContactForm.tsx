@@ -102,7 +102,7 @@ const ContactForm = (props: Props) => {
             {success !== null &&
                 <IconToast 
                     title={success ? 'Mensagem enviada' : 'Mensagem não enviada'} 
-                    description={success ? 'Sua mensagem foi enviada com sucesso, aguarda até ser respondido' : 'Ocorreu algum problema no envio da mensagem'} 
+                    description={success ? 'Sua mensagem foi enviada com sucesso, aguarde até ser respondido' : 'Ocorreu um problema no envio da mensagem'} 
                     success={success} 
                     setState={setSuccess}
                 />
