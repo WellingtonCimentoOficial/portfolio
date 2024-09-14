@@ -99,11 +99,11 @@ const ContactForm = (props: Props) => {
                     </div>
                 </form>
             </div>
-            {success !== true &&
+            {success !== null &&
                 <IconToast 
                     title={success ? 'Mensagem enviada' : 'Mensagem não enviada'} 
                     description={success ? 'Sua mensagem foi enviada com sucesso, aguarde até ser respondido' : 'Ocorreu um problema no envio da mensagem'} 
-                    success={true} 
+                    success={success} 
                     setState={setSuccess}
                 />
             }
