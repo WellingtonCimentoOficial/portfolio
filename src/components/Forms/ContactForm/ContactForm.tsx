@@ -70,7 +70,7 @@ const ContactForm = (props: Props) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <form action="post" className={styles.form} onSubmit={handleSubmit}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.header}>
                         <div className={styles.headerItem}>
                             <div className={styles.inputContainer}>
