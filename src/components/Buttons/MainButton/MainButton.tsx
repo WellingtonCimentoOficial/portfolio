@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import styles from './MainButton.module.css'
 
 type Props = {
+    id?: string
     type: 'button'|'anchor'
     href?: string
     filltype?: 'default'|'borderonly'
@@ -12,9 +13,10 @@ type Props = {
     backgroundColor?: string
     color?: string
     target?: '_self'|'_blank'
+    disabled?: boolean
 }
 
-const MainButton: React.FC<Props> = ({children, href="/", filltype='default', disableHoverEffect, type, submit, icon, backgroundColor='var(--principal-color)', color='white', target='_self'}: Props) => {
+const MainButton: React.FC<Props> = ({children, href="/", filltype='default', disableHoverEffect, type, submit, icon, backgroundColor='var(--principal-color)', color='white', target='_self', id, disabled}: Props) => {
     const buttonRef = useRef<HTMLButtonElement>(null)
     const buttonAnchorRef = useRef<HTMLAnchorElement>(null)
     const iconRef = useRef<HTMLDivElement>(null)
@@ -63,7 +65,7 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
     switch(type){
         case 'button':
             return (
-                <button ref={buttonRef} type={submit ? 'submit' : 'button'} {...defaultProps}>
+                <button disabled={disabled} id={id} ref={buttonRef} type={submit ? 'submit' : 'button'} {...defaultProps}>
                     <>
                         {icon &&
                             <div ref={iconRef} className={styles.containerIcon}>
@@ -76,7 +78,7 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
             )
         case 'anchor':
             return (
-                <a ref={buttonAnchorRef} {...defaultProps} href={href} target={target} rel="noopener noreferrer">
+                <a id={id} ref={buttonAnchorRef} {...defaultProps} href={href} target={target} rel="noopener noreferrer">
                     <>
                         {icon &&
                             <div ref={iconRef} className={styles.containerIcon}>
