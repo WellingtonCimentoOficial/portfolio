@@ -10,7 +10,8 @@ const IconLoader = ({transparency=false}: Props) => {
     const handleDocument = useCallback((value: "hidden"|"auto") => {
         document.body.style.overflowY = value
         document.documentElement.style.overflowY = value
-        document.body.style.pointerEvents = value
+        document.body.style.pointerEvents = (value === "hidden" ? "none" : value)
+        document.documentElement.style.pointerEvents = (value === "hidden" ? "none" : value)
         document.documentElement.style.overflowY = value
         document.body.style.userSelect = value
         document.documentElement.style.userSelect = value

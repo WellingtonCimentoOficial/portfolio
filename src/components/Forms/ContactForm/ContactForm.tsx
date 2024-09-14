@@ -1,9 +1,10 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import styles from './ContactForm.module.css'
 import MainButton from '../../Buttons/MainButton/MainButton'
 import { useSendEmail } from '../../../hooks/useSendEmail'
 import { LoadingContext } from '../../../contexts/LoadingContext'
 import { useRecaptcha } from '../../../hooks/useRecaptcha'
+import IconToast from '../../Toasts/IconToast/IconToast'
 
 type Props = {}
 
@@ -12,29 +13,51 @@ const ContactForm = (props: Props) => {
     const [lastName, setLastName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [message, setMessage] = useState<string>('')
+    const [success, setSuccess] = useState<boolean|null>(null)
     const { sendEmail } = useSendEmail()
     const {isLoading, setIsLoading} = useContext(LoadingContext)
     const { initializeRecaptcha, getRecaptchaToken } = useRecaptcha()
+    const updatedStateValuesRef = useRef<{firstName: string, lastName: string, email: string, message: string}>({ firstName: '', lastName: '', email: '', message: ''})
 
     const handleSendEmail = useCallback(async (token: string) => {
-        console.log(firstName, lastName, email, message)
-        // const success = await sendEmail({firstName, lastName, email, message, recaptchaToken: token})
-        // if(success){
-        //     setFirstName('')
-        //     setLastName('')
-        //     setEmail('')
-        //     setMessage('')
-        // }
-        // if(firstName.length > 3 && lastName.length > 3 && /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) && message.length > 10){
-        // }
+        if(updatedStateValuesRef.current.firstName.length > 3 && 
+            updatedStateValuesRef.current.lastName.length > 3 && 
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(updatedStateValuesRef.current.email) && 
+            updatedStateValuesRef.current.message.length > 10
+        ){
+            const success = await sendEmail({
+                firstName: updatedStateValuesRef.current.firstName, 
+                lastName: updatedStateValuesRef.current.lastName, 
+                email: updatedStateValuesRef.current.email, 
+                message: updatedStateValuesRef.current.message, 
+                recaptchaToken: token
+            })
+            if(success){
+                setFirstName('')
+                setLastName('')
+                setEmail('')
+                setMessage('')
+                setSuccess(true)
+            }else{
+                setSuccess(false)
+            }
+        }
         setIsLoading(false)
-    }, [email, firstName, lastName, message, setIsLoading, sendEmail])
+    }, [updatedStateValuesRef, setIsLoading, sendEmail])
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         setIsLoading(true)
         getRecaptchaToken()
+
     }
+
+    useEffect(() => { // USANDO REF POIS A FUNÇÃO HANDLESENDEMAIL NÃO ESTAVA VALORES EM BRANCO DO STATE
+        updatedStateValuesRef.current.firstName = firstName
+        updatedStateValuesRef.current.lastName = lastName
+        updatedStateValuesRef.current.email = email
+        updatedStateValuesRef.current.message = message
+    }, [firstName, lastName, email, message])
 
     useEffect(() => {
         initializeRecaptcha({
@@ -76,6 +99,14 @@ const ContactForm = (props: Props) => {
                     </div>
                 </form>
             </div>
+            {success !== null &&
+                <IconToast 
+                    title={success ? 'Mensagem enviada' : 'Mensagem não enviada'} 
+                    description={success ? 'Sua mensagem foi enviada com sucesso, aguarda até ser respondido' : 'Ocorreu algum problema no envio da mensagem'} 
+                    success={success} 
+                    setState={setSuccess}
+                />
+            }
         </div>
     )
 }
