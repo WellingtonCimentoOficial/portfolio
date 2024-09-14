@@ -6,6 +6,14 @@
         right: 20px;
     }
 }
+@keyframes show2 {
+    0% {
+        right: -500px;
+    }
+    100% {
+        right: 0px;
+    }
+}
 @keyframes loading {
     0% {
         width: 0px;
@@ -88,4 +96,14 @@
     width: 100%;
     border-radius: 0px 0px 10px 10px;
     animation: loading 5s ease-in-out forwards;
+}
+
+@media (max-width: 395px) {
+    .wrapper {
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: auto;
+        animation: show2 1s ease-in-out forwards;
+    }
 }
