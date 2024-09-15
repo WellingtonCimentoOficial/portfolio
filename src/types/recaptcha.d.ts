@@ -2,6 +2,7 @@ export type RecaptchaOptionsType = {
     sitekey: string
     container: string
     size?: "invisible"
+    badge?: "default"|"hidden"
     callback: (token: string) => void
 }
 
