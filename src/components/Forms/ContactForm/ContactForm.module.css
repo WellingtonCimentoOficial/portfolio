@@ -45,6 +45,10 @@
 .footer {
 
 }
+.grecaptcha-badge { 
+    visibility: hidden; 
+}
+
 
 @media (max-width: 900px) {
     .headerItem {
