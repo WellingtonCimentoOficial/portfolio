@@ -63,7 +63,7 @@ const ContactForm = (props: Props) => {
         initializeRecaptcha({
             sitekey: process.env.REACT_APP_RECAPTCHA_TOKEN ?? '', 
             container: "recaptcha", 
-            badge: "hidden",
+            badge: "default",
             callback: handleSendEmail
         })
     }, [initializeRecaptcha, handleSendEmail])
