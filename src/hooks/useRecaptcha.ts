@@ -26,20 +26,20 @@ export const useRecaptcha = () => {
         document.head.appendChild(style)
     }, [])
 
-    const renderRecaptcha = useCallback(async ({ sitekey, container, badge, callback} : RecaptchaOptionsType) => {
+    const renderRecaptcha = useCallback(async ({ sitekey, container, badge, callback, errorCallback} : RecaptchaOptionsType) => {
         window.grecaptcha.ready(() => {
-            window.grecaptcha.render(container, {sitekey, size: "invisible", callback})
+            window.grecaptcha.render(container, {sitekey, size: "invisible", callback, "error-callback": errorCallback ?? (() => null)})
         })
         if(badge === "hidden"){
             removeBagde()
         }
     }, [removeBagde])
 
-    const initializeRecaptcha = useCallback(async ({sitekey, container, badge, callback} : RecaptchaOptionsType) => {
+    const initializeRecaptcha = useCallback(async ({sitekey, container, badge, callback, errorCallback} : RecaptchaOptionsType) => {
         if(!ScriptExists(src) && sitekey !== ''){
             createScriptRecaptcha()
         }else if(isRecaptchaScriptLoaded && !hasRendered){
-            renderRecaptcha({sitekey, container, badge, callback})
+            renderRecaptcha({sitekey, container, badge, callback, errorCallback})
             setHasRendered(true)
         }else{
             SetIsRecaptchaScriptLoaded(true)

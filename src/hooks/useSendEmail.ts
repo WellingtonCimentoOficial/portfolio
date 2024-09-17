@@ -32,14 +32,8 @@ export const useSendEmail = () => {
             publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         })
         
-        try {
-            const response = await emailjs.send(serviceID, templateID, templateParams)
-            if(response.status === 200){
-                return true
-            }
-        } catch (error) {
-            return false
-        }
+        const response = await emailjs.send(serviceID, templateID, templateParams)
+        return response
 
     }, [])
 

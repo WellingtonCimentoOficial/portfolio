@@ -32,12 +32,16 @@
 .input {
     flex: 1;
     padding: 10px 20px;
-    border: 1.5px solid rgb(210, 210, 210);
+    border: 2px solid rgb(210, 210, 210);
     transition: 0.25s;
     outline: none;
 }
 .input:focus {
     border-color: var(--principal-color);
+}
+.input:disabled {
+    opacity: 50%;
+    cursor: default;
 }
 .body .inputContainer, .body .inputContainer .input {
     height: 200px;

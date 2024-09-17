@@ -56,8 +56,8 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
     }
 
     const defaultProps = {
-        className: styles.button,
         style: {...style, borderColor: backgroundColor},
+        className: `${styles.button} ${disabled ? styles.disabled : null}`,
         onMouseEnter: () => !disableHoverEffect && handleHoverEffect('in'),
         onMouseOut:() => !disableHoverEffect && handleHoverEffect('out')
     }

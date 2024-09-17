@@ -1,14 +1,22 @@
-export type RecaptchaOptionsType = {
+type RecaptchaDefaultType = {
     sitekey: string
-    container: string
-    size?: "invisible"
-    badge?: "default"|"hidden"
     callback: (token: string) => void
+}
+
+export type RecaptchaOptionsType = RecaptchaDefaultType & {
+    container: string
+    badge?: "default"|"hidden"
+    errorCallback?: () => void
+}
+
+export type RecaptchaRenderType = RecaptchaDefaultType & {
+    size?: "invisible"
+    "error-callback": () => void
 }
 
 interface RecaptchaInterface {
     ready: (callback: () => void) => void
-    render: (container: string, options: Options) => void
+    render: (container: string, options: RecaptchaRenderType) => void
     execute: () => void
 }
 

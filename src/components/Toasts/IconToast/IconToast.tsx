@@ -2,17 +2,20 @@ import React, { useEffect } from 'react'
 import styles from './IconToast.module.css'
 import { PiCheckBold, PiPlusBold } from "react-icons/pi";
 
-type Props = {
+export type IconToastType = {
     title: string,
-    description: string
+    message: string
+}
+
+type Props = IconToastType & {
     success?: boolean
     setState: React.Dispatch<React.SetStateAction<boolean | null>>
 }
 
-const IconToast = ({title, description, success, setState}: Props) => {
+const IconToast = ({title, message, success, setState}: Props) => {
 
     useEffect(() => {
-        const timeout = setTimeout(() => setState(null), 5000)
+        const timeout = setTimeout(() => setState(null), 10000)
         return () => clearTimeout(timeout)
     }, [setState])
 
@@ -31,7 +34,7 @@ const IconToast = ({title, description, success, setState}: Props) => {
                         <span className={`${styles.title} ${success ? styles.successColor : styles.errorColor}`}>{title}</span>
                     </div>
                     <div className={styles.body}>
-                        <span className={styles.description}>{description}</span>
+                        <span className={styles.description}>{message}</span>
                     </div>
                 </div>
             </div>

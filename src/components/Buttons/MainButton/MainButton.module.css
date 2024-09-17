@@ -17,9 +17,10 @@
     padding: 10px 30px;
     text-decoration: none;
 }
-.button:disabled {
-    background-color: rgba(0, 0, 0, 0.200);
-    border-color: rgba(0, 0, 0, 0.200);
+.disabled {
+    cursor: default;
+    opacity: 50%;
+    pointer-events: none;
 }
 .containerIcon {
     pointer-events: none;
