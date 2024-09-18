@@ -1,0 +1,42 @@
+@keyframes selectEffect {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: white;
+    }
+}
+.wrapper {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    user-select: none;
+}
+.container {
+    padding: 4px;
+    display: flex;
+    gap: 10px;
+    background-color: rgb(240, 240, 240);
+}
+.flexItem {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.text {
+    color: rgb(150, 150, 150);
+    font-weight: 300
+}
+.focus {
+    animation: selectEffect 0.3s ease-in-out forwards;
+}
+.focus .text {
+    color: var(--black-color);
+    font-weight: 500;
+}
+
+.container, .flexItem {
+    border-radius: 5px;
+}

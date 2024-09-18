@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react'
+import React, {useCallback, useContext, useEffect, useState } from 'react'
 import styles from './HomePage.module.css'
 import WidthLayout from '../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../components/Buttons/MainButton/MainButton'
@@ -29,7 +29,8 @@ import PreviewCard from '../../components/Cards/PreviewCard/PreviewCard'
 import { ProjectType } from '../../types/projectType'
 import ProjectModal from '../../components/Modals/ProjectModal/ProjectModal'
 import BasicSelect, { DefaultSelectType } from '../../components/Selects/BasicSelect/BasicSelect'
-import LineCarousel from '../../components/Carousels/LineCarousel/LineCarousel'
+import InlineSelect from '../../components/Selects/InlineSelect/InlineSelect'
+import { LoadingContext } from '../../contexts/LoadingContext'
 
 type Props = {}
 type defaultType = {
@@ -121,18 +122,16 @@ const HomePage = (props: Props) => {
     }
 
     const selectDataOne: DefaultSelectType[] = [
-        {id: 0, text: "Popular"},
+        {id: 0, text: "Todos"},
         {id: 1, text: "Favoritos"},
     ]
     const selectDataTwo: DefaultSelectType[] = [
         {id: 0, text: "Relevância"},
     ]
-    const lineData: DefaultSelectType[] = [
-        {id: 0, text: "HTML"},
-        {id: 1, text: "Javascript"},
-        {id: 2, text: "Css"},
-        {id: 3, text: "Python"},
-        {id: 4, text: "TypeScript"},
+    const selectDataThree: DefaultSelectType[] = [
+        {id: 0, text: "Todas"},
+        {id: 2, text: "Linha de comando"},
+        {id: 1, text: "Gráfica"},
     ]
 
     const [projects, setProjects] = useState<ProjectType[]>(projectData)
@@ -140,21 +139,32 @@ const HomePage = (props: Props) => {
     const [showModal, setShowModal] = useState<boolean>(false)
     const [filterOne, setFilterOne] = useState<DefaultSelectType>(selectDataOne[0])
     const [filterTwo, setFilterTwo] = useState<DefaultSelectType>(selectDataTwo[0])
+    const [filterThree, setFilterThree] = useState<DefaultSelectType>(selectDataThree[0])
+    const { setIsLoading } = useContext(LoadingContext)
 
     const handleModal = (data: ProjectType) => {
         setModalData(data)
         setShowModal(true)
     }
 
-    useEffect(() => {
-        setProjects(oldValue => {
-            if(filterOne.id === 1){
-                const valueUpdated = oldValue.filter(project => project.isFavorite)
-                return valueUpdated
-            }
-            return projectData
+    const handleFilters = useCallback(() => {
+        const projectDataFiltered = projectData.filter(project => {
+            const matchesFavorite = filterOne.id === 0 || project.isFavorite === true
+            const matchesInterface = filterThree.id === 0 || project.isGUI === (filterThree.id === 1 ? true : false)
+            
+            return matchesFavorite && matchesInterface
         })
-    }, [filterOne])
+        const projectDataSorted = projectDataFiltered.sort((a, b) => {
+            return (b.isHighlighted ? 1 : 0) - (a.isHighlighted ? 1 : 0)
+        })
+        setProjects(projectDataSorted)
+    }, [filterOne, filterThree])
+
+    useEffect(() => {
+        setIsLoading(true)
+        handleFilters()
+        setIsLoading(false)
+    }, [filterThree, filterOne, setIsLoading, handleFilters])
 
     return (
         <div className={styles.wrapper}>
@@ -190,10 +200,10 @@ const HomePage = (props: Props) => {
                             </div>
                             <div className={styles.containerProjectsFiltersGroup}>
                                 <div className={styles.containerProjectsFiltersFlexItemCenter}>
-                                    <LineCarousel data={lineData} />
+                                    <InlineSelect data={selectDataThree} current={filterThree} setState={setFilterThree} />
                                 </div>
                                 <div className={styles.containerProjectsFiltersFlexItemEnd}>
-                                    <span className={styles.containerProjectsFiltersFlexItemText}>Filtrar por:</span>
+                                    <span className={styles.containerProjectsFiltersFlexItemText}>Ordenar por:</span>
                                     <BasicSelect data={selectDataTwo} current={filterTwo} setState={setFilterTwo} />
                                 </div>
                             </div>
@@ -202,6 +212,9 @@ const HomePage = (props: Props) => {
                             {projects.map(project => (
                                 <PreviewCard key={project.id} data={project} setState={handleModal} />
                             ))}
+                            {projects.length === 0 &&
+                                <span>😓😓😓 Infelizmente não encontramos nenhum item com esses parâmetros 😓😓😓</span>
+                            }
                         </div>
                     </TitleDescLayout>
                 </WidthLayout>

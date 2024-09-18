@@ -142,7 +142,9 @@ export const projectData: ProjectType[] = [
             css: 10.6,
             html: 1.2
         },
-        isFavorite: true
+        isFavorite: true,
+        isGUI: true,
+        isHighlighted: true
     },
     {
         id: 1,
@@ -172,7 +174,9 @@ export const projectData: ProjectType[] = [
             css: 0,
             html: 0
         },
-        isFavorite: false
+        isFavorite: false,
+        isGUI: false,
+        isHighlighted: false
     },
     {
         id: 2,
@@ -202,7 +206,9 @@ export const projectData: ProjectType[] = [
             css: 0,
             html: 0
         },
-        isFavorite: false
+        isFavorite: false,
+        isGUI: false,
+        isHighlighted: false
     },
     {
         id: 3,
@@ -248,7 +254,9 @@ export const projectData: ProjectType[] = [
             css: 29.2,
             html: 25.5
         },
-        isFavorite: false
+        isFavorite: false,
+        isGUI: true,
+        isHighlighted: true
     },
     {
         id: 4,
@@ -286,7 +294,9 @@ export const projectData: ProjectType[] = [
             css: 0,
             html: 0
         },
-        isFavorite: false
+        isFavorite: false,
+        isGUI: false,
+        isHighlighted: false
     },
     {
         id: 5,
@@ -576,6 +586,8 @@ export const projectData: ProjectType[] = [
             css: 20.1,
             html: 32.9
         },
-        isFavorite: true
+        isFavorite: true,
+        isGUI: true,
+        isHighlighted: true
     },
 ]

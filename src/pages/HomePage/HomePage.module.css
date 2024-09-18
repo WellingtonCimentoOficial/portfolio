@@ -129,6 +129,9 @@
 .containerProjectsFiltersFlexItemCenter {
     width: 600px;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
 }
 .containerProjectsFiltersFlexItemEnd {
