@@ -1,44 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.11b1e084.css",
-    "main.js": "/static/js/main.dd17aac1.js",
+    "main.js": "/static/js/main.005e885d.js",
     "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
-    "static/media/1.png": "/static/media/1.5b9acfc56bc0b5d0c02e.png",
-    "static/media/3.png": "/static/media/3.6b614d96a871652bd0b7.png",
-    "static/media/4.png": "/static/media/4.09e89b1cea3ab555f4bb.png",
-    "static/media/7.png": "/static/media/7.bb52c6e6468b13ec7fca.png",
-    "static/media/2.png": "/static/media/2.ae4e5e399b12653285fd.png",
-    "static/media/8.png": "/static/media/8.e90a2703aecf83d0f87e.png",
-    "static/media/11.png": "/static/media/11.367fa17cbcc181197e99.png",
-    "static/media/9.png": "/static/media/9.ec354c9678f3eacf406b.png",
-    "static/media/10.png": "/static/media/10.f844e10277d322bf1f36.png",
-    "static/media/12.png": "/static/media/12.1f93bbca937a91f42e29.png",
-    "static/media/13.png": "/static/media/13.a3d162c01ff3cb367f0d.png",
-    "static/media/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311.png": "/static/media/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311.a816a467f071c4dca70d.png",
-    "static/media/16.png": "/static/media/16.f8fd60e2663c36c630c2.png",
-    "static/media/5.png": "/static/media/5.1a47b2f35817f340840e.png",
-    "static/media/6.png": "/static/media/6.fa57b6282d0bb84327ac.png",
     "static/media/curriculo.pdf": "/static/media/curriculo.7f356b09e2cfbbbf0542.pdf",
-    "static/media/14.png": "/static/media/14.218f12642285febd95bf.png",
-    "static/media/17.png": "/static/media/17.b6e06a0b76c0ac02a378.png",
-    "static/media/postgre.png": "/static/media/postgre.a7fa39912c91e079e90b.png",
-    "static/media/python.png": "/static/media/python.6a5cbc319ab3ddf8ef92.png",
-    "static/media/atom.png": "/static/media/atom.ac9979693620f0a96231.png",
-    "static/media/git.png": "/static/media/git.985a7327fc7347ebdba0.png",
-    "static/media/mysql.png": "/static/media/mysql.7d8d571e5629923eaf74.png",
-    "static/media/docker.png": "/static/media/docker.a1ade01f67ea8745fce2.png",
-    "static/media/django.png": "/static/media/django.559d0c6161a6fb950f02.png",
-    "static/media/html.png": "/static/media/html.6e930594286d8afe4c79.png",
-    "static/media/css-3.png": "/static/media/css-3.463e319bad8e0edf1ef7.png",
-    "static/media/typescript.png": "/static/media/typescript.af108db04a54d784da9b.png",
-    "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
     "index.html": "/index.html",
     "main.11b1e084.css.map": "/static/css/main.11b1e084.css.map",
-    "main.dd17aac1.js.map": "/static/js/main.dd17aac1.js.map",
+    "main.005e885d.js.map": "/static/js/main.005e885d.js.map",
     "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.11b1e084.css",
-    "static/js/main.dd17aac1.js"
+    "static/js/main.005e885d.js"
   ]
 }
