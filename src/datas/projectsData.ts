@@ -1,20 +1,4 @@
 import { ProjectType } from '../types/projectType'
-import ecMarket1 from '../assets/ecmarket/1.png'
-import ecMarket2 from '../assets/ecmarket/2.png'
-import ecMarket3 from '../assets/ecmarket/3.png'
-import ecMarket4 from '../assets/ecmarket/4.png'
-import ecMarket5 from '../assets/ecmarket/5.png'
-import ecMarket6 from '../assets/ecmarket/6.png'
-import ecMarket7 from '../assets/ecmarket/7.png'
-import ecMarket8 from '../assets/ecmarket/8.png'
-import ecMarket9 from '../assets/ecmarket/9.png'
-import ecMarket10 from '../assets/ecmarket/10.png'
-import ecMarket11 from '../assets/ecmarket/11.png'
-import ecMarket12 from '../assets/ecmarket/12.png'
-import ecMarket13 from '../assets/ecmarket/13.png'
-import ecMarket14 from '../assets/ecmarket/14.png'
-import ecMarket16 from '../assets/ecmarket/16.png'
-import ecMarket17 from '../assets/ecmarket/17.png'
 
 export const projectData: ProjectType[] = [
     {
@@ -24,112 +8,112 @@ export const projectData: ProjectType[] = [
         images: {
             logo: {
                 id: 0,
-                url: ecMarket1
+                url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726771208/ecmarket-26_gl2vra.png"
             },
             main: {
                 id: 0,
-                url: ecMarket1
+                url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770113/ecmarket-1_pnln9i.png"
             },
             others: [
                 {
                     id: 0,
-                    url: ecMarket1
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770113/ecmarket-1_pnln9i.png"
                 },
                 {
                     id: 1,
-                    url: ecMarket2
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770112/ecmarket-2_cfrute.png"
                 },
                 {
                     id: 2,
-                    url: ecMarket3
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770113/ecmarket-3_zbwecz.png"
                 },
                 {
                     id: 3,
-                    url: ecMarket4
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770112/ecmarket-4_um7foq.png"
                 },
                 {
                     id: 4,
-                    url: ecMarket5
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770111/ecmarket-5_ktujeh.png"
                 },
                 {
                     id: 5,
-                    url: ecMarket6
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770111/ecmarket-6_bo9yxy.png"
                 },
                 {
                     id: 6,
-                    url: ecMarket7
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770113/ecmarket-7_xihduk.png"
                 },
                 {
                     id: 7,
-                    url: ecMarket8
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770112/ecmarket-8_gnrm4c.png"
                 },
                 {
                     id: 8,
-                    url: ecMarket9
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770111/ecmarket-9_mvfkfr.png"
                 },
                 {
                     id: 9,
-                    url: ecMarket10
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770112/ecmarket-10_zfrmz3.png"
                 },
                 {
                     id: 10,
-                    url: ecMarket11
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770113/ecmarket-11_qwqtgl.png"
                 },
                 {
                     id: 11,
-                    url: ecMarket12
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770111/ecmarket-12_e97pkh.png"
                 },
                 {
                     id: 12,
-                    url: ecMarket13
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770113/ecmarket-13_tujzqi.png"
                 },
                 {
                     id: 13,
-                    url: ecMarket14
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770113/ecmarket-14_pxj5gj.png"
                 },
                 {
                     id: 14,
-                    url: "https://github.com/user-attachments/assets/8b4fa58c-aed3-4da5-a539-31bdcaba2c37"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770114/ecmarket-15_oocelf.png"
                 },
                 {
                     id: 15,
-                    url: ecMarket16
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770114/ecmarket-16_epg1n4.png"
                 },
                 {
                     id: 16,
-                    url: ecMarket17
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770114/ecmarket-17_fijs90.png"
+                },
+                {
+                    id: 17,
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770115/ecmarket-18_i0qc3g.png"
                 },
                 {
                     id: 18,
-                    url: "https://github.com/user-attachments/assets/549df2b8-1762-496c-aebc-5d1d29096ed1"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770115/ecmarket-19_vmlbhh.png"
                 },
                 {
                     id: 19,
-                    url: "https://github.com/user-attachments/assets/e40ebec3-e6d9-4c8e-ab36-2df4a109066a"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770115/ecmarket-20_r1d1j6.png"
                 },
                 {
                     id: 20,
-                    url: "https://github.com/user-attachments/assets/c1ec19bd-a811-40c3-931e-aa41a2701487"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770116/ecmarket-21_ecdh4z.png"
                 },
                 {
                     id: 21,
-                    url: "https://github.com/user-attachments/assets/8d3cd52d-2a6b-43c4-9d1b-e0e0567c060a"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770116/ecmarket-22_j5atiy.png"
                 },
                 {
                     id: 22,
-                    url: "https://github.com/user-attachments/assets/e2aab758-1af8-4629-8a15-045c1b3c1f60"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770116/ecmarket-23_nqgzom.png"
                 },
                 {
                     id: 23,
-                    url: "https://github.com/user-attachments/assets/9caf6d08-9019-485a-b924-b3791e2f0c64"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770117/ecmarket-24_emsadw.png"
                 },
                 {
                     id: 24,
-                    url: "https://github.com/user-attachments/assets/30fa390c-a029-49f4-a157-cd4dbff41034"
-                },
-                {
-                    id: 25,
-                    url: "https://github.com/user-attachments/assets/3150a2a2-4ece-4617-8613-1c2ea9c18251"
+                    url: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726770117/ecmarket-25_vh5nrh.png"
                 },
 
             ]
@@ -153,16 +137,16 @@ export const projectData: ProjectType[] = [
         images: {
             logo: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/105569816-c416d000-5d23-11eb-8819-f1fb05723e7e.png'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726672442/smart-lamp-controller-2_wruyqq.png'
             },
             main: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/105621837-85981880-5dea-11eb-94ea-9a092e6e68ba.PNG'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726672177/smart-lamp-controller-1_lyoxy4.png'
             },
             others: [
                 {
                     id: 0,
-                    url: 'https://user-images.githubusercontent.com/77591040/105621837-85981880-5dea-11eb-94ea-9a092e6e68ba.PNG'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726672177/smart-lamp-controller-1_lyoxy4.png'
                 },
             ]
         },
@@ -185,16 +169,16 @@ export const projectData: ProjectType[] = [
         images: {
             logo: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/146302939-55455d44-2431-421b-bf17-1d5b9f42cc29.png'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726772495/magic-led-v2-2_ekjtb0.png'
             },
             main: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/146302939-55455d44-2431-421b-bf17-1d5b9f42cc29.png'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726672176/magic-led-v2-1_ovtujh.png'
             },
             others: [
                 {
                     id: 0,
-                    url: 'https://user-images.githubusercontent.com/77591040/146302939-55455d44-2431-421b-bf17-1d5b9f42cc29.png'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726672176/magic-led-v2-1_ovtujh.png'
                 },
             ]
         },
@@ -217,32 +201,32 @@ export const projectData: ProjectType[] = [
         images: {
             logo: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/146306375-2a0d317b-bd29-4c85-b381-119e55a9d918.PNG'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726771761/flask-project01-6_qgmr0f.png'
             },
             main: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/146306375-2a0d317b-bd29-4c85-b381-119e55a9d918.PNG'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726674467/flask-project01-1_s17h0a.png'
             },
             others: [
                 {
                     id: 0,
-                    url: 'https://user-images.githubusercontent.com/77591040/146306375-2a0d317b-bd29-4c85-b381-119e55a9d918.PNG'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726674467/flask-project01-1_s17h0a.png'
                 },
                 {
                     id: 1,
-                    url: 'https://user-images.githubusercontent.com/77591040/146306532-8768e018-41a4-4254-8694-db75e5438ac0.PNG'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726674467/flask-project01-2_pbe9ff.png'
                 },
                 {
                     id: 2,
-                    url: 'https://user-images.githubusercontent.com/77591040/146306717-48caca8e-cf54-467a-bda3-eb4cc706264b.png'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726674467/flask-project01-3_kto8sj.png'
                 },
                 {
                     id: 3,
-                    url: 'https://user-images.githubusercontent.com/77591040/146306898-3a8fa0d9-eadd-4a46-b668-6f0516b221ea.PNG'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726674468/flask-project01-4_oywp3q.png'
                 },
                 {
                     id: 4,
-                    url: 'https://user-images.githubusercontent.com/77591040/146306147-ba2a6d99-e0ed-48ee-9211-8d3e40d37c64.gif'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726674469/flask-project01-5_euz1pb.gif'
                 },
             ]
         },
@@ -265,24 +249,24 @@ export const projectData: ProjectType[] = [
         images: {
             logo: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/177911527-265bbd9e-4c2c-41ef-b1bf-18b59a108ff4.PNG'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726772673/u3a-bot-4_ovjija.png'
             },
             main: {
                 id: 0,
-                url: 'https://user-images.githubusercontent.com/77591040/177911527-265bbd9e-4c2c-41ef-b1bf-18b59a108ff4.PNG'
+                url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726671631/u3a-bot-1_wa0zqb.png'
             },
             others: [
                 {
                     id: 0,
-                    url: 'https://user-images.githubusercontent.com/77591040/177911527-265bbd9e-4c2c-41ef-b1bf-18b59a108ff4.PNG'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726671631/u3a-bot-1_wa0zqb.png'
                 },
                 {
                     id: 1,
-                    url: 'https://user-images.githubusercontent.com/77591040/177911528-ace89ff4-e210-4cb8-b5d2-6c27870013fe.PNG'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726671632/u3a-bot-2_zmvptv.png'
                 },
                 {
                     id: 2,
-                    url: 'https://user-images.githubusercontent.com/77591040/177911714-f82e9cde-418a-433b-ae73-ed06337ae2b6.PNG'
+                    url: 'https://res.cloudinary.com/dmkxkaumk/image/upload/v1726671631/u3a-bot-3_xwr3jc.png'
                 },
             ]
         },
@@ -305,276 +289,276 @@ export const projectData: ProjectType[] = [
         images: {
             logo: {
                 "id": 0,
-                "url": "https://github.com/user-attachments/assets/905eae7b-bf94-4230-ae8b-0c251ec7759b"
+                "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726772075/glozble-67_esjg7u.png"
             },
             main: {
                 "id": 0,
-                "url": "https://github.com/user-attachments/assets/905eae7b-bf94-4230-ae8b-0c251ec7759b"
+                "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675636/glozble-1_xhpu6l.png"
             },
             others: [
                 {
                     "id": 0,
-                    "url": "https://github.com/user-attachments/assets/905eae7b-bf94-4230-ae8b-0c251ec7759b"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675636/glozble-1_xhpu6l.png"
                 },
                 {
                     "id": 1,
-                    "url": "https://github.com/user-attachments/assets/9187ed81-e1f8-4874-8f66-58ee303c3274"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675645/glozble-2_n4hnyt.png"
                 },
                 {
                     "id": 2,
-                    "url": "https://github.com/user-attachments/assets/e3a8c2a9-3404-410e-be17-853766b3933f"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675648/glozble-3_vrrxym.png"
                 },
                 {
                     "id": 3,
-                    "url": "https://github.com/user-attachments/assets/ee1361d3-97a5-4cc2-b12d-1efe7c21ef6e"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675710/glozble-4_mmflhw.png"
                 },
                 {
                     "id": 4,
-                    "url": "https://github.com/user-attachments/assets/38789e0a-787c-4d33-bf47-3cb8e41dfc04"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675673/glozble-5_g3t635.png"
                 },
                 {
                     "id": 5,
-                    "url": "https://github.com/user-attachments/assets/622480d6-18c5-4280-bfbe-612c97671634"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675639/glozble-6_dxml0k.png"
                 },
                 {
                     "id": 6,
-                    "url": "https://github.com/user-attachments/assets/643c094f-38d5-4182-a15c-b116480d0326"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675636/glozble-7_pd4lwi.png"
                 },
                 {
                     "id": 7,
-                    "url": "https://github.com/user-attachments/assets/76414bc2-281d-4c36-8fa8-883fd41a400f"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675635/glozble-8_mfeff6.png"
                 },
                 {
                     "id": 8,
-                    "url": "https://github.com/user-attachments/assets/c8599d3b-1279-4329-b5b6-30370dc0bff3"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675641/glozble-9_s3dtw0.png"
                 },
                 {
                     "id": 9,
-                    "url": "https://github.com/user-attachments/assets/aebc0929-7f33-4e2b-95cf-39f328f44e94"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675650/glozble-10_sd6z7a.png"
                 },
                 {
                     "id": 10,
-                    "url": "https://github.com/user-attachments/assets/cf70f229-3e1d-42b1-9f6a-b6000019bbde"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675637/glozble-11_rhppdz.png"
                 },
                 {
                     "id": 11,
-                    "url": "https://github.com/user-attachments/assets/bf0ba9bc-a320-4b7f-9152-c1619b59e20d"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675647/glozble-12_nos9sb.png"
                 },
                 {
                     "id": 12,
-                    "url": "https://github.com/user-attachments/assets/c01a28c4-ff04-486b-a18f-d550fac839b5"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675640/glozble-13_ixoalv.png"
                 },
                 {
                     "id": 13,
-                    "url": "https://github.com/user-attachments/assets/2b37f875-f89e-49d5-bb42-faaa2f53df71"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675713/glozble-14_bhpgnj.png"
                 },
                 {
                     "id": 14,
-                    "url": "https://github.com/user-attachments/assets/b9b537a1-dcfa-4245-887d-ec47fdee6498"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675716/glozble-15_wm39lf.png"
                 },
                 {
                     "id": 15,
-                    "url": "https://github.com/user-attachments/assets/2e975725-3888-4d67-8af7-b8483a70faf3"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675711/glozble-16_pus4fn.png"
                 },
                 {
                     "id": 16,
-                    "url": "https://github.com/user-attachments/assets/bbc00bf7-c519-40f2-9f4b-68bb9abf4959"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675646/glozble-17_havpsq.png"
                 },
                 {
                     "id": 17,
-                    "url": "https://github.com/user-attachments/assets/a843bd2f-6a59-4795-8a3d-a00ac3f7cb64"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675642/glozble-18_f1turr.png"
                 },
                 {
                     "id": 18,
-                    "url": "https://github.com/user-attachments/assets/593b0d81-b71c-4bc0-9329-7f65499333fb"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675654/glozble-19_jkfh5t.png"
                 },
                 {
                     "id": 19,
-                    "url": "https://github.com/user-attachments/assets/655cc231-c20d-4d9f-a32b-fa127ae64d81"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675657/glozble-20_psiul3.png"
                 },
                 {
                     "id": 20,
-                    "url": "https://github.com/user-attachments/assets/d4e2e09f-2e88-43d3-b977-9b46696dfe98"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675651/glozble-21_tn0mix.png"
                 },
                 {
                     "id": 21,
-                    "url": "https://github.com/user-attachments/assets/b9f506f5-1724-46a0-9f64-cb4dea674b1d"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675672/glozble-22_w7kboc.png"
                 },
                 {
                     "id": 22,
-                    "url": "https://github.com/user-attachments/assets/a5130839-b959-4cbd-b25a-a89da13a1694"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675643/glozble-23_obiwsd.png"
                 },
                 {
                     "id": 23,
-                    "url": "https://github.com/user-attachments/assets/3b739a0d-18c5-4f0f-a250-71922235e4be"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675660/glozble-24_mjltp4.png"
                 },
                 {
                     "id": 24,
-                    "url": "https://github.com/user-attachments/assets/3e3ffe6f-1933-46a5-bfc7-487b72f61557"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675667/glozble-25_xt5o4q.png"
                 },
                 {
                     "id": 25,
-                    "url": "https://github.com/user-attachments/assets/c5c16a0a-e18f-4e88-85b0-bfc919577a59"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675665/glozble-26_swejss.png"
                 },
                 {
                     "id": 26,
-                    "url": "https://github.com/user-attachments/assets/0a29385b-d8cc-43e2-ab62-55952614bcd3"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675652/glozble-27_lg7pdj.png"
                 },
                 {
                     "id": 27,
-                    "url": "https://github.com/user-attachments/assets/eda89a99-7b06-4a08-be4d-f46d6bfa1136"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675655/glozble-28_g2thhk.png"
                 },
                 {
                     "id": 28,
-                    "url": "https://github.com/user-attachments/assets/30cf5d7c-4fb9-4be9-9ff6-1b328912e92d"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675669/glozble-29_ipeahs.png"
                 },
                 {
                     "id": 29,
-                    "url": "https://github.com/user-attachments/assets/be3aec57-9cd6-4703-a2cf-e68fcce846d4"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675662/glozble-30_ybt7wz.png"
                 },
                 {
                     "id": 30,
-                    "url": "https://github.com/user-attachments/assets/0f7f104d-0488-40d2-9a16-edc03f1cd29a"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675668/glozble-31_afelty.png"
                 },
                 {
                     "id": 31,
-                    "url": "https://github.com/user-attachments/assets/143cd1f2-52ca-4262-a1ea-a94b25d7468a"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675670/glozble-32_rp2srt.png"
                 },
                 {
                     "id": 32,
-                    "url": "https://github.com/user-attachments/assets/312e240b-66e5-4717-9a1f-ccc76df35bc7"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675659/glozble-33_pyxed9.png"
                 },
                 {
                     "id": 33,
-                    "url": "https://github.com/user-attachments/assets/3a53e917-6f68-4e1c-b237-293584b712d6"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675656/glozble-34_z4xehs.png"
                 },
                 {
                     "id": 34,
-                    "url": "https://github.com/user-attachments/assets/fcb12f1d-3bd6-4d2f-9b04-65bfde5addf0"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675664/glozble-35_wruwll.png"
                 },
                 {
                     "id": 35,
-                    "url": "https://github.com/user-attachments/assets/ceee6ff7-9e8a-4e66-9d3e-4b4f1872c1e5"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675663/glozble-36_otcwrm.png"
                 },
                 {
                     "id": 36,
-                    "url": "https://github.com/user-attachments/assets/7647962f-293f-4f6a-9280-33a7487a4b03"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675718/glozble-37_utfkwm.png"
                 },
                 {
                     "id": 37,
-                    "url": "https://github.com/user-attachments/assets/becf4be5-89b1-434b-8b51-988308ae8e60"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675712/glozble-38_hs2ais.png"
                 },
                 {
                     "id": 38,
-                    "url": "https://github.com/user-attachments/assets/9063de6a-9337-4d1c-9e35-bfda4d7911d6"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675715/glozble-39_bsv4ol.png"
                 },
                 {
                     "id": 39,
-                    "url": "https://github.com/user-attachments/assets/86ccefea-9723-48f4-90f1-9490b33b00df"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675689/glozble-40_cdlqx8.png"
                 },
                 {
                     "id": 40,
-                    "url": "https://github.com/user-attachments/assets/b7146399-b683-4ce8-a6c1-f2806c14a0c0"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675686/glozble-41_vrkskw.png"
                 },
                 {
                     "id": 41,
-                    "url": "https://github.com/user-attachments/assets/a27ba4af-b3a2-4d0e-9929-8b41fca2cd3c"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675675/glozble-42_ia3yt5.png"
                 },
                 {
                     "id": 42,
-                    "url": "https://github.com/user-attachments/assets/39e5f0af-47d7-48ac-96ca-223c9d30601b"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675681/glozble-43_jzebfa.png"
                 },
                 {
                     "id": 43,
-                    "url": "https://github.com/user-attachments/assets/4bef1b1d-41a2-4632-8a5d-2cea3ceeac86"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675708/glozble-44_pql6id.png"
                 },
                 {
                     "id": 44,
-                    "url": "https://github.com/user-attachments/assets/da06a565-396d-4e4b-90bc-300d6a58eba8"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675692/glozble-45_vrbjgn.png"
                 },
                 {
                     "id": 45,
-                    "url": "https://github.com/user-attachments/assets/44522be2-8cf1-4aff-9716-8d562b206bc3"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675678/glozble-46_rtqkba.png"
                 },
                 {
                     "id": 46,
-                    "url": "https://github.com/user-attachments/assets/bce11fca-78ae-4670-9821-19dc26877061"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675676/glozble-47_lbvnqm.png"
                 },
                 {
                     "id": 47,
-                    "url": "https://github.com/user-attachments/assets/5dbe61e3-0288-4757-a25a-28f7bec21b6b"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675682/glozble-48_nwaefm.png"
                 },
                 {
                     "id": 48,
-                    "url": "https://github.com/user-attachments/assets/2b1d6d73-4667-4c3f-be85-1e43dce78d91"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675703/glozble-49_tuy8ib.png"
                 },
                 {
                     "id": 49,
-                    "url": "https://github.com/user-attachments/assets/45b70e52-14b7-4481-ac4f-92ecaa16c842"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675707/glozble-50_lsc0cl.png"
                 },
                 {
                     "id": 50,
-                    "url": "https://github.com/user-attachments/assets/e6622aa1-fbe4-404a-b050-85dbbf9a08dd"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675684/glozble-51_xxxavg.png"
                 },
                 {
                     "id": 51,
-                    "url": "https://github.com/user-attachments/assets/cfa0e2ae-36c6-43b9-b86d-65ad14f1ad5f"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675698/glozble-52_ltss0p.png"
                 },
                 {
                     "id": 52,
-                    "url": "https://github.com/user-attachments/assets/59814133-5849-4abf-81df-dd08f745f3ab"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675687/glozble-53_lzhekm.png"
                 },
                 {
                     "id": 53,
-                    "url": "https://github.com/user-attachments/assets/7d1b9917-c327-4a87-b467-36a26c982dab"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675692/glozble-54_kxhxdm.png"
                 },
                 {
                     "id": 54,
-                    "url": "https://github.com/user-attachments/assets/fc07c83f-1968-44da-88fb-c7b609f01447"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675685/glozble-55_tjqpvg.png"
                 },
                 {
                     "id": 55,
-                    "url": "https://github.com/user-attachments/assets/2e8cd89e-4b98-4b1e-bdfe-60c205e9eb69"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675680/glozble-56_xlzx3a.png"
                 },
                 {
                     "id": 56,
-                    "url": "https://github.com/user-attachments/assets/a32b8e14-4310-4124-9321-fcdc3d9dc27f"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675690/glozble-57_iqnnar.png"
                 },
                 {
                     "id": 57,
-                    "url": "https://github.com/user-attachments/assets/51b07fb8-bf4c-470b-a1d9-426e2f3bc31c"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675677/glozble-58_tewhva.png"
                 },
                 {
                     "id": 58,
-                    "url": "https://github.com/user-attachments/assets/5a2f97bb-f5fe-43fd-af73-9a734b8340d8"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675697/glozble-59_roplqo.png"
                 },
                 {
                     "id": 59,
-                    "url": "https://github.com/user-attachments/assets/362bbe15-affd-4293-a81c-37f301646037"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675704/glozble-60_d2nv1x.png"
                 },
                 {
                     "id": 60,
-                    "url": "https://github.com/user-attachments/assets/8d117a30-bea9-4e0a-bc74-3baebb5b8a13"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675702/glozble-61_lt9lu2.png"
                 },
                 {
                     "id": 61,
-                    "url": "https://github.com/user-attachments/assets/0a8185d6-a17b-43dc-a18b-300958475675"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675699/glozble-62_f54ktv.png"
                 },
                 {
                     "id": 62,
-                    "url": "https://github.com/user-attachments/assets/73ff08f0-785e-4b9c-951e-8d52db3ed070"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675706/glozble-63_nrwdi6.png"
                 },
                 {
                     "id": 63,
-                    "url": "https://github.com/user-attachments/assets/c0058f61-0f23-44e2-8409-51a2e237cd97"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675700/glozble-64_dxaabi.png"
                 },
                 {
                     "id": 64,
-                    "url": "https://github.com/user-attachments/assets/0e8ae685-2d63-46eb-8018-52361b95fdaa"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675695/glozble-65_ynbjue.png"
                 },
                 {
                     "id": 65,
-                    "url": "https://github.com/user-attachments/assets/9add86de-3446-4e21-9753-5189a76dcbc9"
+                    "url": "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726675694/glozble-66_g7dsif.png"
                 }
             ]
         },

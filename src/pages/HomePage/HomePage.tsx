@@ -1,27 +1,15 @@
-import React, {useCallback, useContext, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import styles from './HomePage.module.css'
 import WidthLayout from '../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../components/Buttons/MainButton/MainButton'
-import myimage from '../../assets/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311.png'
 import TitleDescLayout from '../../layouts/TitleDescLayout/TitleDescLayout'
-import reactImage from '../../assets/atom.png'
-import cssImage from '../../assets/css-3.png'
-import djangoImage from '../../assets/django.png'
-import htmlImage from '../../assets/html.png'
-import jsImage from '../../assets/js.png'
-import mySqlImage from '../../assets/mysql.png'
-import postgresSqlImage from '../../assets/postgre.png'
-import pythonImage from '../../assets/python.png'
-import typeScriptImage from '../../assets/typescript.png'
-import dockerImage from '../../assets/docker.png'
-import gitHubImage from '../../assets/github.png'
-import gitImage from '../../assets/git.png'
 import cvPdf from '../../assets/curriculo.pdf'
 import SimpleCard from '../../components/Cards/SimpleCard/SimpleCard'
-import { PiHandshakeThin, PiMegaphoneThin, PiCheckThin,
+import {
+    PiHandshakeThin, PiMegaphoneThin, PiCheckThin,
     PiCardsThreeThin, PiBrainThin, PiBriefcaseThin, PiCloudThin,
     PiClockCountdownThin
- } from "react-icons/pi";
+} from "react-icons/pi";
 import ContactForm from '../../components/Forms/ContactForm/ContactForm'
 import { FaGithub } from "react-icons/fa6";
 import { projectData } from '../../datas/projectsData'
@@ -38,7 +26,11 @@ type defaultType = {
     description: string
 }
 type TechStackType = defaultType & {
-    data: string[]
+    data: {
+        id: number,
+        image: string,
+        description: string
+    }[]
 }
 type SoftSkillsType = defaultType & {
     data: {
@@ -58,7 +50,68 @@ const HomePage = (props: Props) => {
     const techStackSection: TechStackType = {
         title: "Tech Stack",
         description: "Tecnologias que eu utilizo para construir soluções robustas, escaláveis e inovadoras. A combinação certa de ferramentas do mercado, transformando suas ideias em produtos digitais de alta qualidade.",
-        data: [reactImage, cssImage, djangoImage, htmlImage, jsImage, mySqlImage, postgresSqlImage, pythonImage, typeScriptImage, dockerImage, gitImage, gitHubImage]
+        data: [
+            {
+                id: 0,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677974/atom_eydxg7.png",
+                description: "React",
+            },
+            {
+                id: 1,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677973/css-3_yx7nz6.png",
+                description: "CSS3",
+            },
+            {
+                id: 2,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677977/django_ibacgu.png",
+                description: "Django",
+            },
+            {
+                id: 3,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677981/html_zf6pww.png",
+                description: "Html",
+            },
+            {
+                id: 4,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677985/js_qs7tfy.png",
+                description: "JavaScript",
+            },
+            {
+                id: 5,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677983/mysql_dvepbh.png",
+                description: "MySQL",
+            },
+            {
+                id: 6,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677986/postgre_yjvw3k.png",
+                description: "PostgreSQL",
+            },
+            {
+                id: 7,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677989/python_nwuu3m.png",
+                description: "Python",
+            },
+            {
+                id: 8,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677990/typescript_t2vwfo.png",
+                description: "TypeScript",
+            },
+            {
+                id: 9,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677978/docker_oioaks.png",
+                description: "Docker",
+            },
+            {
+                id: 10,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677979/git_esktrj.png",
+                description: "Git",
+            },
+            {
+                id: 11,
+                image: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677982/github_ut6tbh.png",
+                description: "Github",
+            },
+        ]
     }
 
     const softSkillsSection: SoftSkillsType = {
@@ -122,20 +175,20 @@ const HomePage = (props: Props) => {
     }
 
     const selectDataOne: DefaultSelectType[] = [
-        {id: 0, text: "Todos"},
-        {id: 1, text: "Favoritos"},
+        { id: 0, text: "Todos" },
+        { id: 1, text: "Favoritos" },
     ]
     const selectDataTwo: DefaultSelectType[] = [
-        {id: 0, text: "Relevância"},
+        { id: 0, text: "Relevância" },
     ]
     const selectDataThree: DefaultSelectType[] = [
-        {id: 0, text: "Todas"},
-        {id: 2, text: "Linha de comando"},
-        {id: 1, text: "Gráfica"},
+        { id: 0, text: "Todas" },
+        { id: 2, text: "Linha de comando" },
+        { id: 1, text: "Gráfica" },
     ]
 
     const [projects, setProjects] = useState<ProjectType[]>(projectData)
-    const [modalData, setModalData] = useState<ProjectType|null>(null)
+    const [modalData, setModalData] = useState<ProjectType | null>(null)
     const [showModal, setShowModal] = useState<boolean>(false)
     const [filterOne, setFilterOne] = useState<DefaultSelectType>(selectDataOne[0])
     const [filterTwo, setFilterTwo] = useState<DefaultSelectType>(selectDataTwo[0])
@@ -151,7 +204,7 @@ const HomePage = (props: Props) => {
         const projectDataFiltered = projectData.filter(project => {
             const matchesFavorite = filterOne.id === 0 || project.isFavorite === true
             const matchesInterface = filterThree.id === 0 || project.isGUI === (filterThree.id === 1 ? true : false)
-            
+
             return matchesFavorite && matchesInterface
         })
         const projectDataSorted = projectDataFiltered.sort((a, b) => {
@@ -175,7 +228,7 @@ const HomePage = (props: Props) => {
                             <span className={styles.containerOneItemTitleOne}>Pronto para <span className={styles.highlight}>destacar</span> sua <span className={styles.highlight}>marca online</span>?</span>
                             {/* <span className={styles.containerOneItemTitleTwo}>Transforme sua ideia em sua realidade digital. Vamos juntos!👊🏻</span> */}
                             <span className={styles.containerOneItemText}>
-                            Transforme sua ideia em realidade digital utilizando tecnologias de ponta como Python, Django, React com TypeScript, banco de dados PostgreSQL e Docker. Vamos juntos criar soluções inovadoras e eficientes!
+                                Transforme sua ideia em realidade digital utilizando tecnologias de ponta como Python, Django, React com TypeScript, banco de dados PostgreSQL e Docker. Vamos juntos criar soluções inovadoras e eficientes!
                             </span>
                             <div className={styles.containerOneItemButtons}>
                                 <MainButton type='anchor' href='https://github.com/WellingtonCimentoOficial' disableHoverEffect filltype='borderonly' icon={<FaGithub />} backgroundColor='black' color='white'>
@@ -185,7 +238,7 @@ const HomePage = (props: Props) => {
                             </div>
                         </div>
                         <div className={styles.containerOneimage}>
-                            <img className={styles.containerOneImageImg} src={myimage} alt="" />
+                            <img className={styles.containerOneImageImg} src="https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677991/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311_xonha4.png" alt="" />
                         </div>
                     </section>
                 </WidthLayout>
@@ -223,9 +276,9 @@ const HomePage = (props: Props) => {
                 <WidthLayout>
                     <TitleDescLayout title={techStackSection.title} description={techStackSection.description}>
                         <div className={`${styles.containerSectionBody} ${styles.containerTechStackBody}`}>
-                            {techStackSection.data.map((image, index) => (
-                                <div key={index} className={styles.containerTechStackBodyItem}>
-                                    <img className={styles.containerTechStackBodyItemImage} src={image} alt="" />
+                            {techStackSection.data.map(item => (
+                                <div key={item.id} className={styles.containerTechStackBodyItem}>
+                                    <img className={styles.containerTechStackBodyItemImage} src={item.image} alt={item.description} />
                                 </div>
                             ))}
                         </div>
@@ -242,12 +295,12 @@ const HomePage = (props: Props) => {
                                     Array.from(Array(softSkillsSection.data.length / quantityPerRow)).map((_, indexArr) => (
                                         <div className={styles.containerSoftSkillsBodyItem} key={indexArr}>
                                             {softSkillsSection.data.slice(indexArr * quantityPerRow, (indexArr + 1) * quantityPerRow).map((skill, index) => (
-                                                <SimpleCard 
-                                                key={indexArr * index}
-                                                title={skill.title} 
-                                                description={skill.description} 
-                                                icon={skill.icon} 
-                                                mark={skill.isRelevant} />
+                                                <SimpleCard
+                                                    key={indexArr * index}
+                                                    title={skill.title}
+                                                    description={skill.description}
+                                                    icon={skill.icon}
+                                                    mark={skill.isRelevant} />
                                             ))}
                                         </div>
                                     ))
@@ -266,13 +319,13 @@ const HomePage = (props: Props) => {
                     </TitleDescLayout>
                 </WidthLayout>
             </section>
-            {modalData && showModal && 
-                <ProjectModal 
-                    title={modalData.title} 
+            {modalData && showModal &&
+                <ProjectModal
+                    title={modalData.title}
                     href={`/project/${modalData.id}/${modalData.title.toLowerCase().split(" ").join("-")}`}
                     type='anchor'
-                    data={modalData} 
-                    setCloseWindowState={(value) => setShowModal(!value)} 
+                    data={modalData}
+                    setCloseWindowState={(value) => setShowModal(!value)}
                 />
             }
         </div>
