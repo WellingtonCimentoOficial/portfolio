@@ -231,7 +231,16 @@ const HomePage = (props: Props) => {
                                 Transforme sua ideia em realidade digital utilizando tecnologias de ponta como Python, Django, React com TypeScript, banco de dados PostgreSQL e Docker. Vamos juntos criar soluções inovadoras e eficientes!
                             </span>
                             <div className={styles.containerOneItemButtons}>
-                                <MainButton type='anchor' href='https://github.com/WellingtonCimentoOficial' disableHoverEffect filltype='borderonly' icon={<FaGithub />} backgroundColor='black' color='white'>
+                                <MainButton 
+                                    type='anchor' 
+                                    href='https://github.com/WellingtonCimentoOficial' 
+                                    disableHoverEffect 
+                                    filltype='borderonly' 
+                                    icon={<FaGithub />} 
+                                    backgroundColor='black' 
+                                    color='white'
+                                    target='_blank'
+                                >
                                     GitHub
                                 </MainButton>
                                 <MainButton type='anchor' href={cvPdf} target="_blank" disableHoverEffect>Baixar CV</MainButton>

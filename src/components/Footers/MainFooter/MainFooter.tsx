@@ -131,7 +131,7 @@ const MainFooter = (props: Props) => {
                                 </div>
                                 <ul className={styles.sectionContainerBody}>
                                     {item.data.map(itemData => (
-                                        <li key={itemData.id}><Link to={itemData.path}>{itemData.text}</Link></li>
+                                        <li key={itemData.id}><Link to={itemData.path} target='_blank'>{itemData.text}</Link></li>
                                     ))}
                                 </ul>
                             </div>
