@@ -11,6 +11,9 @@
     .sideBarContainer {
         display: none;
     }
+    .container {
+        padding: 25px 0px;
+    }
     .flexItem {
         margin: 0;
     }

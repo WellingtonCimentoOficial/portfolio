@@ -51,9 +51,15 @@
 .projectsSelect {
     display: none;
 }
+.projectsSelectLabel {
+    
+}
 
 @media (max-width: 900px){
     .projectsSelect {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 30px;
     }
 }

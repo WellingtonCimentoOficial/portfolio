@@ -52,6 +52,12 @@ const ProjectPage = (props: Props) => {
         project && (
             <div className={styles.wrapper}>
                 <div className={styles.container}>
+                    {projectSelected &&
+                        <div className={styles.projectsSelect}>
+                            <span className={styles.projectsSelectLabel}>Mudar de página</span>
+                            <BasicSelect data={projects} current={projectSelected} setState={setProjectSelected} />
+                        </div>
+                    }
                     <div className={styles.header}>
                         <div className={styles.headerTitleContainer}>
                             <h2 className={styles.headerTitle}>{project.title}</h2>
@@ -61,11 +67,6 @@ const ProjectPage = (props: Props) => {
                             <FaGithub className={styles.headerIcon} />
                         </a>
                     </div>
-                    {projectSelected &&
-                        <div className={styles.projectsSelect}>
-                            <BasicSelect data={projects} current={projectSelected} setState={setProjectSelected} />
-                        </div>
-                    }
                     <div className={styles.body}>
                         <TextContentArea>
                             <LineSeparator />
