@@ -6,8 +6,8 @@ export type DefaultSelectType = {id: number, text: string}
 
 type Props = {
     data: DefaultSelectType[]
-    current: DefaultSelectType
-    setState: React.Dispatch<React.SetStateAction<DefaultSelectType>>
+    current: DefaultSelectType | null
+    setState: React.Dispatch<React.SetStateAction<DefaultSelectType | null>>
 }
 
 const BasicSelect = ({data, current, setState}: Props) => {
@@ -22,7 +22,7 @@ const BasicSelect = ({data, current, setState}: Props) => {
         <div className={styles.wrapper} tabIndex={1} onBlur={() => setShow(false)}>
             <div className={styles.container}>
                 <div className={styles.header} onClick={() => setShow(oldValue => !oldValue)}>
-                    <span className={styles.title}>{current.text}</span>
+                    <span className={styles.title}>{current?.text}</span>
                     {show ? (
                         <PiCaretUpBold className={styles.icon} />
                     ):(

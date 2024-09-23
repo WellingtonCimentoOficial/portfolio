@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './ProjectPage.module.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { ProjectType } from '../../types/projectType'
 import { projectData } from '../../datas/projectsData'
 import { FaGithub } from "react-icons/fa6";
@@ -11,21 +11,42 @@ import SubHeading from '../../components/Headings/SubHeading/SubHeading'
 import DefaultLink from '../../components/Links/DefaultLink/DefaultLink'
 import DefaultList from '../../components/Lists/DefaultList/DefaultList'
 import DefaultItemList from '../../components/Lists/DefaultItemList/DefaultItemList'
+import BasicSelect, { DefaultSelectType } from '../../components/Selects/BasicSelect/BasicSelect'
+import { usePath } from '../../hooks/usePath'
 
 type Props = {}
 
 const ProjectPage = (props: Props) => {
     const { projectId } = useParams()
+    const [projects, setProjects] = useState<DefaultSelectType[]>([])
     const [project, setProject] = useState<ProjectType | null>(null)
+    const [projectSelected, setProjectSelected] = useState<DefaultSelectType | null>(null)
+    const { path } = usePath()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if(typeof projectId === 'string' && !isNaN(parseInt(projectId))){
             const currentProject = projectData.find(item => item.id === parseInt(projectId))
             if(currentProject){
                 setProject(currentProject)
+                setProjectSelected({id: currentProject.id, text: currentProject.title})
             }
         }
     }, [projectId])
+
+    useEffect(() => {
+        const formattedData = projectData.map(item => {
+            return {id: item.id, text: item.title}
+        })
+        setProjects(formattedData)
+    }, [])
+
+    useEffect(() => {
+        if(projectSelected){
+            const url = path(projectSelected.id, projectSelected.text)
+            navigate(url)
+        }
+    }, [projectSelected, navigate, path])
 
     return (
         project && (
@@ -40,6 +61,11 @@ const ProjectPage = (props: Props) => {
                             <FaGithub className={styles.headerIcon} />
                         </a>
                     </div>
+                    {projectSelected &&
+                        <div className={styles.projectsSelect}>
+                            <BasicSelect data={projects} current={projectSelected} setState={setProjectSelected} />
+                        </div>
+                    }
                     <div className={styles.body}>
                         <TextContentArea>
                             <LineSeparator />

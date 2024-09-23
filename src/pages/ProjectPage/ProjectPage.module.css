@@ -48,3 +48,12 @@
 .headerIconContainer:hover .headerIcon {
     fill: var(--principal-color);
 }
+.projectsSelect {
+    display: none;
+}
+
+@media (max-width: 900px){
+    .projectsSelect {
+        display: block;
+    }
+}

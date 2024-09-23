@@ -189,9 +189,9 @@ const HomePage = (props: Props) => {
     const [projects, setProjects] = useState<ProjectType[]>(projectData)
     const [modalData, setModalData] = useState<ProjectType | null>(null)
     const [showModal, setShowModal] = useState<boolean>(false)
-    const [filterOne, setFilterOne] = useState<DefaultSelectType>(selectDataOne[0])
-    const [filterTwo, setFilterTwo] = useState<DefaultSelectType>(selectDataTwo[0])
-    const [filterThree, setFilterThree] = useState<DefaultSelectType>(selectDataThree[0])
+    const [filterOne, setFilterOne] = useState<DefaultSelectType | null>(selectDataOne[0])
+    const [filterTwo, setFilterTwo] = useState<DefaultSelectType | null>(selectDataTwo[0])
+    const [filterThree, setFilterThree] = useState<DefaultSelectType | null>(selectDataThree[0])
     const { setIsLoading } = useContext(LoadingContext)
 
     const handleModal = (data: ProjectType) => {
@@ -201,8 +201,8 @@ const HomePage = (props: Props) => {
 
     const handleFilters = useCallback(() => {
         const projectDataFiltered = projectData.filter(project => {
-            const matchesFavorite = filterOne.id === 0 || project.isFavorite === true
-            const matchesInterface = filterThree.id === 0 || project.isGUI === (filterThree.id === 1 ? true : false)
+            const matchesFavorite = filterOne?.id === 0 || project.isFavorite === true
+            const matchesInterface = filterThree?.id === 0 || project.isGUI === (filterThree?.id === 1 ? true : false)
 
             return matchesFavorite && matchesInterface
         })
