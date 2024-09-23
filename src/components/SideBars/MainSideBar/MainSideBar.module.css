@@ -27,7 +27,7 @@
     width: 100%;
 }
 .navlink:hover {
-    background-color: var(--border-default-color);
+    background-color: var(--transparency-color);
     color: var(--third-color);
 }
 .active, .active:hover {

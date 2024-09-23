@@ -41,6 +41,9 @@
     z-index: 1;
     animation: show 0.25s ease-in-out forwards;
     transform-origin: top;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.10);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.10);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.10);
 }
 .list {
     list-style: none;
@@ -50,7 +53,7 @@
     transition: 0.25s;
 }
 .listItem:hover {
-    background-color: var(--border-default-color);
+    background-color: var(--transparency-color);
 
 }
 .header, .listItem {
