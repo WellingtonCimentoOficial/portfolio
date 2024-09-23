@@ -49,7 +49,7 @@
     fill: var(--principal-color);
 }
 .projectsSelect {
-    /* display: none; */
+    display: none;
     margin-bottom: 30px;
 }
 .projectsSelectLabel {
