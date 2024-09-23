@@ -1,6 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import styles from './HomePage.module.css'
-import WidthLayout from '../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../components/Buttons/MainButton/MainButton'
 import TitleDescLayout from '../../layouts/TitleDescLayout/TitleDescLayout'
 import cvPdf from '../../assets/curriculo.pdf'
@@ -222,111 +221,101 @@ const HomePage = (props: Props) => {
     return (
         <div className={styles.wrapper}>
             <div className={`${styles.containerSection} ${styles.containerMainSection}`}>
-                <WidthLayout>
-                    <section className={styles.containerOne}>
-                        <div className={styles.containerOneItem}>
-                            <span className={styles.containerOneItemTitleOne}>Pronto para <span className={styles.highlight}>destacar</span> sua <span className={styles.highlight}>marca online</span>?</span>
-                            {/* <span className={styles.containerOneItemTitleTwo}>Transforme sua ideia em sua realidade digital. Vamos juntos!👊🏻</span> */}
-                            <span className={styles.containerOneItemText}>
-                                Transforme sua ideia em realidade digital utilizando tecnologias de ponta como Python, Django, React com TypeScript, banco de dados PostgreSQL e Docker. Vamos juntos criar soluções inovadoras e eficientes!
-                            </span>
-                            <div className={styles.containerOneItemButtons}>
-                                <MainButton 
-                                    type='anchor' 
-                                    href='https://github.com/WellingtonCimentoOficial' 
-                                    disableHoverEffect 
-                                    filltype='borderonly' 
-                                    icon={<FaGithub />} 
-                                    backgroundColor='black' 
-                                    color='white'
-                                    target='_blank'
-                                >
-                                    GitHub
-                                </MainButton>
-                                <MainButton type='anchor' href={cvPdf} target="_blank" disableHoverEffect>Baixar CV</MainButton>
-                            </div>
+                <section className={styles.containerOne}>
+                    <div className={styles.containerOneItem}>
+                        <span className={styles.containerOneItemTitleOne}>Pronto para <span className={styles.highlight}>destacar</span> sua <span className={styles.highlight}>marca online</span>?</span>
+                        {/* <span className={styles.containerOneItemTitleTwo}>Transforme sua ideia em sua realidade digital. Vamos juntos!👊🏻</span> */}
+                        <span className={styles.containerOneItemText}>
+                            Transforme sua ideia em realidade digital utilizando tecnologias de ponta como Python, Django, React com TypeScript, banco de dados PostgreSQL e Docker. Vamos juntos criar soluções inovadoras e eficientes!
+                        </span>
+                        <div className={styles.containerOneItemButtons}>
+                            <MainButton 
+                                type='anchor' 
+                                href='https://github.com/WellingtonCimentoOficial' 
+                                disableHoverEffect 
+                                filltype='borderonly' 
+                                icon={<FaGithub />} 
+                                backgroundColor='black' 
+                                color='white'
+                                target='_blank'
+                            >
+                                GitHub
+                            </MainButton>
+                            <MainButton type='anchor' href={cvPdf} target="_blank" disableHoverEffect>Baixar CV</MainButton>
                         </div>
-                        <div className={styles.containerOneimage}>
-                            <img className={styles.containerOneImageImg} src="https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677991/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311_xonha4.png" alt="" />
-                        </div>
-                    </section>
-                </WidthLayout>
+                    </div>
+                    <div className={styles.containerOneimage}>
+                        <img className={styles.containerOneImageImg} src="https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677991/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311_xonha4.png" alt="" />
+                    </div>
+                </section>
             </div>
             <section id='projects' className={`${styles.containerSection} ${styles.containerProjects}`}>
-                <WidthLayout>
-                    <TitleDescLayout title={projectsSection.title} description={projectsSection.description}>
-                        <div className={styles.containerProjectsFilters}>
-                            <div className={styles.containerProjectsFiltersFlexItemStart}>
-                                <span className={styles.containerProjectsFiltersFlexItemText}>Mostrar:</span>
-                                <BasicSelect data={selectDataOne} current={filterOne} setState={setFilterOne} />
+                <TitleDescLayout title={projectsSection.title} description={projectsSection.description}>
+                    <div className={styles.containerProjectsFilters}>
+                        <div className={styles.containerProjectsFiltersFlexItemStart}>
+                            <span className={styles.containerProjectsFiltersFlexItemText}>Mostrar:</span>
+                            <BasicSelect data={selectDataOne} current={filterOne} setState={setFilterOne} />
+                        </div>
+                        <div className={styles.containerProjectsFiltersGroup}>
+                            <div className={styles.containerProjectsFiltersFlexItemCenter}>
+                                <InlineSelect data={selectDataThree} current={filterThree} setState={setFilterThree} />
                             </div>
-                            <div className={styles.containerProjectsFiltersGroup}>
-                                <div className={styles.containerProjectsFiltersFlexItemCenter}>
-                                    <InlineSelect data={selectDataThree} current={filterThree} setState={setFilterThree} />
-                                </div>
-                                <div className={styles.containerProjectsFiltersFlexItemEnd}>
-                                    <span className={styles.containerProjectsFiltersFlexItemText}>Ordenar por:</span>
-                                    <BasicSelect data={selectDataTwo} current={filterTwo} setState={setFilterTwo} />
-                                </div>
+                            <div className={styles.containerProjectsFiltersFlexItemEnd}>
+                                <span className={styles.containerProjectsFiltersFlexItemText}>Ordenar por:</span>
+                                <BasicSelect data={selectDataTwo} current={filterTwo} setState={setFilterTwo} />
                             </div>
                         </div>
-                        <div className={`${styles.containerSectionBody} ${styles.containerProjectsBody}`}>
-                            {projects.map(project => (
-                                <PreviewCard key={project.id} data={project} setState={handleModal} />
-                            ))}
-                            {projects.length === 0 &&
-                                <span>😓😓😓 Infelizmente não encontramos nenhum item com esses parâmetros 😓😓😓</span>
-                            }
-                        </div>
-                    </TitleDescLayout>
-                </WidthLayout>
+                    </div>
+                    <div className={`${styles.containerSectionBody} ${styles.containerProjectsBody}`}>
+                        {projects.map(project => (
+                            <PreviewCard key={project.id} data={project} setState={handleModal} />
+                        ))}
+                        {projects.length === 0 &&
+                            <span>😓😓😓 Infelizmente não encontramos nenhum item com esses parâmetros 😓😓😓</span>
+                        }
+                    </div>
+                </TitleDescLayout>
             </section>
             <section id='techstack' className={`${styles.containerSection} ${styles.containerTechStack}`}>
-                <WidthLayout>
-                    <TitleDescLayout title={techStackSection.title} description={techStackSection.description}>
-                        <div className={`${styles.containerSectionBody} ${styles.containerTechStackBody}`}>
-                            {techStackSection.data.map(item => (
-                                <div key={item.id} className={styles.containerTechStackBodyItem}>
-                                    <img className={styles.containerTechStackBodyItemImage} src={item.image} alt={item.description} />
-                                </div>
-                            ))}
-                        </div>
-                    </TitleDescLayout>
-                </WidthLayout>
+                <TitleDescLayout title={techStackSection.title} description={techStackSection.description}>
+                    <div className={`${styles.containerSectionBody} ${styles.containerTechStackBody}`}>
+                        {techStackSection.data.map(item => (
+                            <div key={item.id} className={styles.containerTechStackBodyItem}>
+                                <img className={styles.containerTechStackBodyItemImage} src={item.image} alt={item.description} />
+                            </div>
+                        ))}
+                    </div>
+                </TitleDescLayout>
             </section>
             <section id='softskills' className={`${styles.containerSection} ${styles.containerSoftSkills}`}>
-                <WidthLayout>
-                    <TitleDescLayout title={softSkillsSection.title} description={softSkillsSection.description}>
-                        <div className={`${styles.containerSectionBody} ${styles.containerSoftSkillsBody}`}>
-                            {(() => {
-                                const quantityPerRow = 4
-                                return (
-                                    Array.from(Array(softSkillsSection.data.length / quantityPerRow)).map((_, indexArr) => (
-                                        <div className={styles.containerSoftSkillsBodyItem} key={indexArr}>
-                                            {softSkillsSection.data.slice(indexArr * quantityPerRow, (indexArr + 1) * quantityPerRow).map((skill, index) => (
-                                                <SimpleCard
-                                                    key={indexArr * index}
-                                                    title={skill.title}
-                                                    description={skill.description}
-                                                    icon={skill.icon}
-                                                    mark={skill.isRelevant} />
-                                            ))}
-                                        </div>
-                                    ))
-                                )
-                            })()}
-                        </div>
-                    </TitleDescLayout>
-                </WidthLayout>
+                <TitleDescLayout title={softSkillsSection.title} description={softSkillsSection.description}>
+                    <div className={`${styles.containerSectionBody} ${styles.containerSoftSkillsBody}`}>
+                        {(() => {
+                            const quantityPerRow = 4
+                            return (
+                                Array.from(Array(softSkillsSection.data.length / quantityPerRow)).map((_, indexArr) => (
+                                    <div className={styles.containerSoftSkillsBodyItem} key={indexArr}>
+                                        {softSkillsSection.data.slice(indexArr * quantityPerRow, (indexArr + 1) * quantityPerRow).map((skill, index) => (
+                                            <SimpleCard
+                                                key={indexArr * index}
+                                                title={skill.title}
+                                                description={skill.description}
+                                                icon={skill.icon}
+                                                mark={skill.isRelevant} />
+                                        ))}
+                                    </div>
+                                ))
+                            )
+                        })()}
+                    </div>
+                </TitleDescLayout>
             </section>
             <section id='contact' className={`${styles.containerSection} ${styles.containerContact}`}>
-                <WidthLayout>
-                    <TitleDescLayout title={contactSection.title} description={contactSection.description}>
-                        <div className={`${styles.containerSectionBody} ${styles.containerContactBody}`}>
-                            <ContactForm />
-                        </div>
-                    </TitleDescLayout>
-                </WidthLayout>
+                <TitleDescLayout title={contactSection.title} description={contactSection.description}>
+                    <div className={`${styles.containerSectionBody} ${styles.containerContactBody}`}>
+                        <ContactForm />
+                    </div>
+                </TitleDescLayout>
             </section>
             {modalData && showModal &&
                 <ProjectModal

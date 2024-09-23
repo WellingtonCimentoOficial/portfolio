@@ -17,15 +17,18 @@
 .wrapper {
     background-color: white;
     width: 100vw;
-    -webkit-box-shadow: 0px -3px 20px 0px rgba(0,0,0,0.10);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    /* -webkit-box-shadow: 0px -3px 20px 0px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px -3px 20px 0px rgba(0,0,0,0.10);
-    box-shadow: 0px -3px 20px 0px rgba(0,0,0,0.10);
+    box-shadow: 0px -3px 20px 0px rgba(0,0,0,0.10); */
+    border-bottom: 1px solid var(--border-default-color);
     position: sticky;
     z-index: 99;
     top: 0;
 }
 .container {
-    padding: 13px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;

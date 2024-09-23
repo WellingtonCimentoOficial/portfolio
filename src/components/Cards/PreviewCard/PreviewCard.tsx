@@ -3,6 +3,7 @@ import { ProjectType } from '../../../types/projectType'
 import { PiHeart } from "react-icons/pi";
 import { SiTypescript, SiJavascript, SiPython, SiHtml5, SiCss3 } from "react-icons/si";
 import { Link } from "react-router-dom";
+import { usePath } from "../../../hooks/usePath";
 
 type Props = {
     data: ProjectType
@@ -12,6 +13,8 @@ type Props = {
 const PreviewCard = ({ data, setState}: Props) => {
     const title = data.title.length > 15 ? data.title.slice(0, 15) + '...' : data.title
     const description = data.description.length > 23 ? data.description.slice(0, 23) + '...' : data.description
+
+    const {path} = usePath()
 
     const handleClick = () => {
         setState(data)
@@ -40,7 +43,7 @@ const PreviewCard = ({ data, setState}: Props) => {
                         <div className={styles.containerLogo}>
                             <img className={styles.imageLogo} src={data.images.logo.url} alt="" />
                         </div>
-                        <Link to={`/project/${data.id}/${data.title.toLowerCase().split(" ").join("-")}`} className={styles.projectTitle}>{title}</Link>
+                        <Link to={path(data.id, data.title)} className={styles.projectTitle}>{title}</Link>
                     </div>
                     <div className={styles.containerIcons}>
                         {data.statistics.html > 0 && 

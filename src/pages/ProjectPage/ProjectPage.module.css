@@ -2,8 +2,49 @@
 
 }
 .container {
-
 }
 .sectionCarousel {
-    max-height: 400px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.headerTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.headerTitle {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.headerIconContainer {
+    display: flex;
+}
+.version {
+    background-color: var(--principal-color);
+    color: white;
+    font-size: 0.85rem;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: default;
+    user-select: none;
+}
+.headerIcon {
+    font-size: 2rem;
+    transition: 0.15s;
+}
+.headerIconContainer:hover .headerIcon {
+    fill: var(--principal-color);
 }

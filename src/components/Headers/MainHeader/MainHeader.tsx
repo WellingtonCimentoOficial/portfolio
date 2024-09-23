@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './MainHeader.module.css'
-import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 import MainButton from '../../Buttons/MainButton/MainButton'
 import { Link } from 'react-router-dom'
 import { PiListBold, PiPlusBold } from "react-icons/pi";
 import FullLogo from '../../Logos/FullLogo/FullLogo'
+import WidthLayout from '../../../layouts/WidthLayout/WidthLayout';
 
 type Props = {}
 type MenuType = {

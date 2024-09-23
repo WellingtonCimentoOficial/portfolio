@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './MainFooter.module.css'
-import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 import FullLogo from '../../Logos/FullLogo/FullLogo'
 import { Link } from 'react-router-dom'
+import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 
 type Props = {}
 

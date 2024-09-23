@@ -16,9 +16,12 @@
 
     --black-color: rgb(36, 36, 36);
     --black-color-hover:rgb(0, 0, 0);
-    --white-color: rgb(245, 245, 245);
+    --white-color: rgb(255, 255, 255);
+    --link-color: #086dc3;
 
-    --border-default-color: rgba(0, 0, 0, 0.100);
+    --border-default-color: rgb(235, 242, 242);
+
+    --header-height: 70px;
 }
 html, body {
     font-size: 16px;

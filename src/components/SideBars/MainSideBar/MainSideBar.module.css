@@ -1,0 +1,38 @@
+.wrapper {
+    /* background-color: red; */
+    border-right: 1px solid var(--border-default-color);
+}
+.container {
+    width: 300px;
+    margin-right: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - var(--header-height));
+    background-color: transparent;
+}
+.list {
+    
+}
+.listLi {
+}
+.navlink {
+    display: block;
+    white-space: nowrap;
+    padding: 8px 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 280px;
+    text-decoration: none;
+    width: 100%;
+}
+.navlink:hover {
+    background-color: var(--border-default-color);
+    color: var(--third-color);
+}
+.active, .active:hover {
+    background-color: var(--black-color);
+    color: white;
+}
+
+
