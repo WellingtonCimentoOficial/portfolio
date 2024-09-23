@@ -42,7 +42,7 @@
 }
 .containerSection:hover .containerOver {
     transition: 0.3s;
-    background-color: var(--border-default-color);
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 100%;
 }
 .description {

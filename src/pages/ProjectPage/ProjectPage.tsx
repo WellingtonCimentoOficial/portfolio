@@ -26,27 +26,24 @@ const ProjectPage = (props: Props) => {
 
     useEffect(() => {
         if(typeof projectId === 'string' && !isNaN(parseInt(projectId))){
+            const projectsFormatted = projectData.map(item => {
+                return {id: item.id, text: item.title}
+            })
             const currentProject = projectData.find(item => item.id === parseInt(projectId))
             if(currentProject){
                 setProject(currentProject)
                 setProjectSelected({id: currentProject.id, text: currentProject.title})
             }
+            setProjects(projectsFormatted)
         }
     }, [projectId])
 
     useEffect(() => {
-        const formattedData = projectData.map(item => {
-            return {id: item.id, text: item.title}
-        })
-        setProjects(formattedData)
-    }, [])
-
-    useEffect(() => {
-        if(projectSelected){
+        if(projectSelected && project && projectSelected.id !== project.id){
             const url = path(projectSelected.id, projectSelected.text)
             navigate(url)
         }
-    }, [projectSelected, navigate, path])
+    }, [projectSelected, project, navigate, path])
 
     return (
         project && (
