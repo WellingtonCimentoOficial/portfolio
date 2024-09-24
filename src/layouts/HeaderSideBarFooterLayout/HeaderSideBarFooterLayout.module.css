@@ -5,6 +5,7 @@
 .flexItem {
     background-color: transparent;
     margin-left: 60px;
+    flex-grow: 1;
 }
 
 @media (max-width: 900px) {

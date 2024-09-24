@@ -416,7 +416,7 @@ export const projectData: ProjectType[] = [
         }
     },
     {
-        id: uuidv4(),
+        id: 5,
         title: "Glozble",
         description: "Plataforma de ganhos de dinheiro assistindo anúncios",
         images: {
