@@ -14,7 +14,7 @@ const PreviewCard = ({ data, setState}: Props) => {
     const title = data.title.length > 15 ? data.title.slice(0, 15) + '...' : data.title
     const description = data.description.length > 23 ? data.description.slice(0, 23) + '...' : data.description
 
-    const {path} = usePath()
+    const {projectPath} = usePath()
 
     const handleClick = () => {
         setState(data)
@@ -43,7 +43,7 @@ const PreviewCard = ({ data, setState}: Props) => {
                         <div className={styles.containerLogo}>
                             <img className={styles.imageLogo} src={data.images.logo.url} alt="" />
                         </div>
-                        <Link to={path(data.id, data.title)} className={styles.projectTitle}>{title}</Link>
+                        <Link to={projectPath(data.id, data.title)} className={styles.projectTitle}>{title}</Link>
                     </div>
                     <div className={styles.containerIcons}>
                         {data.statistics.html > 0 && 

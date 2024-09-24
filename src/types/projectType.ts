@@ -1,5 +1,10 @@
+type Content = {
+    id: string,
+    text: string
+}
+
 export type Image = {
-    id: number
+    id: string
     url: string
 }
 
@@ -12,7 +17,7 @@ type Statistics = {
 }
 
 export interface ProjectType {
-    id: number
+    id: number | string
     title: string
     description: string
     images: {
@@ -25,4 +30,9 @@ export interface ProjectType {
     isFavorite: boolean
     isGUI: boolean
     isHighlighted: boolean
+    details: {
+        features: Content[],
+        gettingStarted: Content[],
+        talksAndVideos: Content[]
+    }
 }

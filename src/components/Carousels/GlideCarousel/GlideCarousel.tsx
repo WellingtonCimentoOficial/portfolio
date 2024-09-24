@@ -15,7 +15,7 @@ type Props = {
 const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizontal'}: Props) => {
     const [mainImage, setMainImage] = useState<Image>(mainData)
     const [thumbnailBarPositionState, setThumbnailBarPositionState] = useState<ThumbnailBarPositionType>(thumbnailBarPosition)
-    const thumbsRef = useRef<{id: number, element: HTMLDivElement}[]>([])
+    const thumbsRef = useRef<{id: string, element: HTMLDivElement}[]>([])
 
     const handleChange = ((direction: "next"|"previous") => {
         const startIndex = data.findIndex(item => item.id === mainImage.id)

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './BasicSelect.module.css'
 import { PiCaretDownBold, PiCaretUpBold } from "react-icons/pi";
 
-export type DefaultSelectType = {id: number, text: string}
+export type DefaultSelectType = {id: number | string, text: string}
 
 type Props = {
     data: DefaultSelectType[]

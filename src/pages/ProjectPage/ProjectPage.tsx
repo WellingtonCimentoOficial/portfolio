@@ -21,7 +21,7 @@ const ProjectPage = (props: Props) => {
     const [projects, setProjects] = useState<DefaultSelectType[]>([])
     const [project, setProject] = useState<ProjectType | null>(null)
     const [projectSelected, setProjectSelected] = useState<DefaultSelectType | null>(null)
-    const { path } = usePath()
+    const { projectPath } = usePath()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -40,10 +40,10 @@ const ProjectPage = (props: Props) => {
 
     useEffect(() => {
         if(projectSelected && project && projectSelected.id !== project.id){
-            const url = path(projectSelected.id, projectSelected.text)
+            const url = projectPath(projectSelected.id, projectSelected.text)
             navigate(url)
         }
-    }, [projectSelected, project, navigate, path])
+    }, [projectSelected, project, navigate, projectPath])
 
     return (
         project && (
@@ -67,18 +67,19 @@ const ProjectPage = (props: Props) => {
                     <div className={styles.body}>
                         <TextContentArea>
                             <LineSeparator />
-                            <DefaultParagraph>Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".</DefaultParagraph>
-                            <DefaultParagraph>We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need minimal Spring configuration.</DefaultParagraph>
-                            <DefaultParagraph>If you’re looking for information about a specific version, or instructions about how to upgrade from an earlier release, check out the project release notes section on our wiki.</DefaultParagraph>
-                            <SubHeading>Features</SubHeading>
-                            <DefaultList>
-                                <DefaultItemList>Create stand-alone Spring applications</DefaultItemList>
-                                <DefaultItemList>Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)</DefaultItemList>
-                                <DefaultItemList>Provide opinionated 'starter' dependencies to simplify your build configuration</DefaultItemList>
-                                <DefaultItemList>Automatically configure Spring and 3rd party libraries whenever possible</DefaultItemList>
-                                <DefaultItemList>Provide production-ready features such as metrics, health checks, and externalized configuration</DefaultItemList>
-                                <DefaultItemList>Absolutely no code generation and no requirement for XML configuration</DefaultItemList>
-                            </DefaultList>
+                            {project.description.split('\n').map((description, index) => (
+                                <DefaultParagraph key={index}>{description}</DefaultParagraph>
+                            ))}
+                            {project.details.features.length > 0 &&
+                                <>
+                                    <SubHeading>Funcionalidades</SubHeading>
+                                    <DefaultList>
+                                        {project.details.features.map(feature => (
+                                            <DefaultItemList key={feature.id}>{feature.text}</DefaultItemList>
+                                        ))}
+                                    </DefaultList>
+                                </>
+                            }
 
                             <SubHeading>Getting Started</SubHeading>
                             <DefaultList>
