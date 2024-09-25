@@ -25,7 +25,7 @@
     box-shadow: 0px -3px 20px 0px rgba(0,0,0,0.10); */
     border-bottom: 1px solid var(--border-default-color);
     position: sticky;
-    z-index: 99;
+    z-index: 98;
     top: 0;
 }
 .container {

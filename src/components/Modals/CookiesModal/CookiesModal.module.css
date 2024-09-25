@@ -10,6 +10,7 @@
     width: var(--default-width);
     margin: auto;
     border-radius: 5px;
+    z-index: 98;
 }
 .container {
     padding: 20px;
