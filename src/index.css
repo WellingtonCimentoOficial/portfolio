@@ -23,6 +23,8 @@
     --transparency-color: rgb(240, 240, 240);
 
     --header-height: 70px;
+
+    --default-width: 80%;
 }
 html, body {
     font-size: 16px;

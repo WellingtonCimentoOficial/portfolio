@@ -6,6 +6,7 @@ import MainSideBar, { MainSideBarType } from '../../components/SideBars/MainSide
 import styles from './HeaderSideBarFooterLayout.module.css'
 import WidthLayout from '../WidthLayout/WidthLayout'
 import { projectData } from '../../datas/projectsData'
+import DefaultLayout from '../DefaultLayout/DefaultLayout'
 
 type Props = {}
 
@@ -20,7 +21,7 @@ const HeaderSideBarFooterLayout = (props: Props) => {
     }, [])
 
     return (
-        <>
+        <DefaultLayout>
             <MainHeader />
             <WidthLayout>
                 <div className={styles.container}>
@@ -33,7 +34,7 @@ const HeaderSideBarFooterLayout = (props: Props) => {
                 </div>
             </WidthLayout>
             <MainFooter />
-        </>
+        </DefaultLayout>
     )
 }
 

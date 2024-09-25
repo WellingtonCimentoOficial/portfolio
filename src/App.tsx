@@ -4,6 +4,7 @@ import Routes from './Routes';
 import { useEffect, useState } from 'react';
 import IconLoader from './components/Loaders/IconLoader/IconLoader';
 import { LoadingContextProvider } from './contexts/LoadingContext';
+import { CookiesContextProvider } from './contexts/CookiesContext';
 
 function App(){
     const [render, setRender] = useState<boolean>(false)
@@ -20,7 +21,9 @@ function App(){
             <div className="App">
                 <HashRouter>
                     <LoadingContextProvider>
-                        <Routes />
+                        <CookiesContextProvider>
+                            <Routes />
+                        </CookiesContextProvider>
                     </LoadingContextProvider>
                 </HashRouter>
             </div>

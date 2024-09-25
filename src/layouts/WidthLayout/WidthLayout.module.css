@@ -2,7 +2,7 @@
     width: 100%;
 }
 .container {
-    width: 80%;
+    width: var(--default-width);
     margin: auto;
 }
 @media (max-width: 900px) {

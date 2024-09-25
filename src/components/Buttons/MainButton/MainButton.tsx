@@ -14,9 +14,13 @@ type Props = {
     color?: string
     target?: '_self'|'_blank'
     disabled?: boolean
+    onClick?: () => void
 }
 
-const MainButton: React.FC<Props> = ({children, href="/", filltype='default', disableHoverEffect, type, submit, icon, backgroundColor='var(--principal-color)', color='white', target='_self', id, disabled}: Props) => {
+const MainButton: React.FC<Props> = ({
+    children, href="/", filltype='default', disableHoverEffect, 
+    type, submit, icon, backgroundColor='var(--principal-color)', 
+    color='white', target='_self', id, disabled, onClick}: Props) => {
     const buttonRef = useRef<HTMLButtonElement>(null)
     const buttonAnchorRef = useRef<HTMLAnchorElement>(null)
     const iconRef = useRef<HTMLDivElement>(null)
@@ -59,7 +63,8 @@ const MainButton: React.FC<Props> = ({children, href="/", filltype='default', di
         style: {...style, borderColor: backgroundColor},
         className: `${styles.button} ${disabled ? styles.disabled : null}`,
         onMouseEnter: () => !disableHoverEffect && handleHoverEffect('in'),
-        onMouseOut:() => !disableHoverEffect && handleHoverEffect('out')
+        onMouseOut:() => !disableHoverEffect && handleHoverEffect('out'),
+        onClick
     }
 
     switch(type){
