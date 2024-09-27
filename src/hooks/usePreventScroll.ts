@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react"
+import { useCallback } from "react"
 
 export const usePreventScroll = () => {
     const preventScroll = useCallback((prevent: boolean) => {

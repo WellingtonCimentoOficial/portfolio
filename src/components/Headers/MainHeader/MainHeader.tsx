@@ -17,7 +17,6 @@ const MainHeader = (props: Props) => {
     const [showMenuMobile, setShowMenuMobile] = useState<boolean>(false)
     const [startShowEffect, setStartShowEffect] = useState<boolean>(false)
     const navigationContainerRef = useRef<HTMLDListElement>(null)
-    const windowScrollRef = useRef<{top: number, left: number}>({top: window.scrollY, left: window.scrollX})
     const { preventScroll } = usePreventScroll()
 
     const menu: MenuType[] = [
@@ -75,7 +74,7 @@ const MainHeader = (props: Props) => {
         }else{
             preventScroll(false)
         }
-    }, [showMenuMobile, startShowEffect])
+    }, [showMenuMobile, startShowEffect, preventScroll])
 
     return (
         <div className={styles.wrapper}>

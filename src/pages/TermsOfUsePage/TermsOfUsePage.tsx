@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './TermsOfUsePage.module.css'
 import ContentLayout from '../../layouts/ContentLayout/ContentLayout'
 import DefaultList from '../../components/Lists/DefaultList/DefaultList'
 import DefaultItemList from '../../components/Lists/DefaultItemList/DefaultItemList'
