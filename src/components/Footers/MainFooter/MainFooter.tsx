@@ -3,17 +3,22 @@ import styles from './MainFooter.module.css'
 import FullLogo from '../../Logos/FullLogo/FullLogo'
 import { Link } from 'react-router-dom'
 import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
+import { v4 as uuidv4 } from 'uuid';
 
 type Props = {}
 
 type DataType = {
-    id: number
+    id: string
     title: string
     data: {
-        id: number
+        id: string
         text: string
         path: string
     }[]
+}
+
+type SocialMediaType = Omit<DataType, 'data'> & {
+    data: (DataType['data'][number] & {icon: string})[]
 }
 
 const MainFooter = (props: Props) => {
@@ -21,100 +26,120 @@ const MainFooter = (props: Props) => {
 
     const data: DataType[] = [
         {
-            id: 0,
+            id: uuidv4(),
             title: "Navegar",
             data: [
                 {
-                    id: 0,
+                    id: uuidv4(),
                     text: "Habilidades",
                     path: "/"
                 },
                 {
-                    id: 1,
+                    id: uuidv4(),
                     text: "Experiência",
                     path: "/"
                 },
                 {
-                    id: 2,
+                    id: uuidv4(),
                     text: "Projetos",
                     path: "/"
                 },
                 {
-                    id: 3,
+                    id: uuidv4(),
                     text: "Sobre",
                     path: "/"
                 },
             ]
         },
         {
-            id: 2,
+            id: uuidv4(),
             title: "Tecnologias",
             data: [
                 {
-                    id: 6,
+                    id: uuidv4(),
                     text: "Python",
                     path: "/"
                 },
                 {
-                    id: 7,
+                    id: uuidv4(),
                     text: "Django",
                     path: "/"
                 },
                 {
-                    id: 8,
+                    id: uuidv4(),
                     text: "JavaScript",
                     path: "/"
                 },
                 {
-                    id: 9,
+                    id: uuidv4(),
                     text: "TypeScript",
                     path: "/"
                 },
                 {
-                    id: 10,
+                    id: uuidv4(),
                     text: "React JS",
                     path: "/"
                 },
                 {
-                    id: 11,
+                    id: uuidv4(),
                     text: "PostgreSQL",
                     path: "/"
                 },
             ]
         },
         {
-            id: 3,
-            title: "Redes Sociais",
+            id: uuidv4(),
+            title: "Regulamentos",
             data: [
                 {
-                    id: 12,
-                    text: "Instagram",
-                    path: "https://www.instagram.com/wellington_cimento/"
+                    id: uuidv4(),
+                    text: "Termos de Uso",
+                    path: "/terms-of-use"
                 },
                 {
-                    id: 15,
-                    text: "Linkedin",
-                    path: "https://www.linkedin.com/in/wellingtoncimento/"
+                    id: uuidv4(),
+                    text: "Privacidade",
+                    path: "/privacy-policy"
                 },
-                {
-                    id: 16,
-                    text: "Github",
-                    path: "https://github.com/WellingtonCimentoOficial"
-                }
             ]
         },
         {
-            id: 1,
+            id: uuidv4(),
             title: "Contato",
             data: [
                 {
-                    id: 0,
+                    id: uuidv4(),
                     text: "Enviar E-mail",
                     path: "mailto:contato@wellingtoncimento.com"
                 },
             ]
         },
     ]
+
+    const socialMedias: SocialMediaType = {
+        id: uuidv4(),
+        title: "Redes Sociais",
+        data: [
+            {
+                id: uuidv4(),
+                text: "Instagram",
+                icon: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1727399057/instagram-icon_pccvpu.png",
+                path: "https://www.instagram.com/wellington_cimento/"
+            },
+            {
+                id: uuidv4(),
+                text: "Linkedin",
+                icon: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1727399057/linkedin-icon_hk0jb3.png",
+                path: "https://www.linkedin.com/in/wellingtoncimento/"
+            },
+            {
+                id: uuidv4(),
+                text: "Github",
+                icon: "https://res.cloudinary.com/dmkxkaumk/image/upload/v1727399057/github-icon_gh84hq.png",
+                path: "https://github.com/WellingtonCimentoOficial"
+            },
+        ]
+    }
     
     return (
         <div className={styles.wrapper}>
@@ -124,18 +149,36 @@ const MainFooter = (props: Props) => {
                         <Link to="/" className={styles.headerLogoTitle}><FullLogo /></Link>
                     </div>
                     <div className={styles.body}>
-                        {data.map((item) => (
-                            <div className={styles.sectionContainer} key={item.id}>
-                                <div className={styles.sectionContainerHeader}>
-                                    <span className={styles.title}>{item.title}</span>
+                        <>
+                            {data.map((item) => (
+                                <div className={styles.sectionContainer} key={item.id}>
+                                    <div className={styles.sectionContainerHeader}>
+                                        <span className={styles.title}>{item.title}</span>
+                                    </div>
+                                    <ul className={styles.sectionContainerBody}>
+                                        {item.data.map(itemData => (
+                                            <li key={itemData.id}>
+                                                <Link to={itemData.path} target='_blank'>{itemData.text}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <ul className={styles.sectionContainerBody}>
-                                    {item.data.map(itemData => (
-                                        <li key={itemData.id}><Link to={itemData.path} target='_blank'>{itemData.text}</Link></li>
+                            ))}
+                            <div className={styles.sectionContainer}>
+                                <div className={styles.sectionContainerHeader}>
+                                    <span className={styles.title}>{socialMedias.title}</span>
+                                </div>
+                                <ul className={styles.sectionContainerSocialMediaBody}>
+                                    {socialMedias.data.map(media => (
+                                        <li key={media.id}>
+                                            <Link to={media.path} target='_blank'>
+                                                <img className={styles.mediaIcon} src={media.icon} alt={media.text} />
+                                            </Link>
+                                        </li>
                                     ))}
                                 </ul>
                             </div>
-                        ))}
+                        </>
                     </div>
                 </div>
                 <div className={styles.containerTwo}>

@@ -1,0 +1,31 @@
+.wrapper {
+}
+.container {
+}
+.header {
+    background-color: var(--principal-color);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    color: white;
+    font-size: 1.8rem;
+}
+.body {
+    padding: 50px;
+}
+
+@media (max-width: 900px) {
+    .header {
+        height: 150px;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .body {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}

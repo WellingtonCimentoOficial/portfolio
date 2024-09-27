@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { PiListBold, PiPlusBold } from "react-icons/pi";
 import FullLogo from '../../Logos/FullLogo/FullLogo'
 import WidthLayout from '../../../layouts/WidthLayout/WidthLayout';
+import { usePreventScroll } from '../../../hooks/usePreventScroll';
 
 type Props = {}
 type MenuType = {
@@ -16,6 +17,8 @@ const MainHeader = (props: Props) => {
     const [showMenuMobile, setShowMenuMobile] = useState<boolean>(false)
     const [startShowEffect, setStartShowEffect] = useState<boolean>(false)
     const navigationContainerRef = useRef<HTMLDListElement>(null)
+    const windowScrollRef = useRef<{top: number, left: number}>({top: window.scrollY, left: window.scrollX})
+    const { preventScroll } = usePreventScroll()
 
     const menu: MenuType[] = [
         {
@@ -68,11 +71,9 @@ const MainHeader = (props: Props) => {
     useEffect(() => {
         if(showMenuMobile && startShowEffect && navigationContainerRef.current){
             navigationContainerRef.current.style.display = "block"
-            document.body.style.overflowY = "hidden"
-            document.documentElement.style.overflowY = "hidden"
+            preventScroll(true)
         }else{
-            document.body.style.overflowY = "auto"
-            document.documentElement.style.overflowY = "auto"
+            preventScroll(false)
         }
     }, [showMenuMobile, startShowEffect])
 

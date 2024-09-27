@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { CookiesContext } from '../../contexts/CookiesContext'
 import CookiesModal from '../../components/Modals/CookiesModal/CookiesModal'
 

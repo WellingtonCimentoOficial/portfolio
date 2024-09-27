@@ -13,7 +13,7 @@ const CookiesModal = (props: Props) => {
             <div className={styles.container}>
                 <div className={styles.flexHeader}>
                     <h2 className={styles.title}>Politica de cookies</h2>
-                    <p className={styles.text}>Este site utiliza cookies para melhorar sua experiência. Ao clicar em "Aceitar", você concorda com os nossos <DefaultLink href='/'>Termos de Uso e Política</DefaultLink> de <DefaultLink href='/'>Privacidade</DefaultLink>.</p>
+                    <p className={styles.text}>Este site utiliza cookies para melhorar sua experiência. Ao clicar em "Aceitar", você concorda com os nossos <DefaultLink href='/terms-of-use'>Termos de Uso</DefaultLink> e <DefaultLink href='/privacy-policy'>Política de Privacidade</DefaultLink>.</p>
                 </div>
                 <div className={styles.flexBody}>
                     <MainButton 

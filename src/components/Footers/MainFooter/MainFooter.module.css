@@ -56,6 +56,17 @@
     padding: 20px 0px;
 }
 
+.sectionContainerSocialMediaBody {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.mediaIcon {
+    width: 30px;
+}
+
 @media (max-width: 500px) {
     .body {
         background-color: transparent;

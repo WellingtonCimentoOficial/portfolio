@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './DefaultLink.module.css'
+import { Link } from 'react-router-dom'
 
 type Props = {
     children: React.ReactNode
@@ -8,7 +9,7 @@ type Props = {
 
 const DefaultLink = ({href, children}: Props) => {
     return (
-        <a className={styles.link} href={href}>{children}</a>
+        <Link className={styles.link} to={href}>{children}</Link>
     )
 }
 
