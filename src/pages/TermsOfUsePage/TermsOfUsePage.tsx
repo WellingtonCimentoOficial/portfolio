@@ -83,7 +83,7 @@ const TermsOfUsePage = (props: Props) => {
     ]
     return (
         <ContentLayout title='Termos de Uso'>
-            <span>Última atualização: 26/09/2024</span>
+            <span>Última atualização: 27/09/2024</span>
             <span>Bem-vindo ao {appName}.</span>
             <span>Ao acessar ou usar nosso site, você concorda em cumprir estes Termos de Uso. Se não concordar com estes termos, não utilize nosso site.</span>
             {data.map((father, index) => (

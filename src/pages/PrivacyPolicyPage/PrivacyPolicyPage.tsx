@@ -81,16 +81,6 @@ const PrivacyPolicyPage = (props: Props) => {
         },
         {
             id: uuidv4(),
-            title: "Seus Direitos",
-            items: [
-                {
-                    id: uuidv4(),
-                    text: "Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Para exercer esses direitos, entre em contato conosco pelo e-mail [seu e-mail de contato]."
-                }
-            ]
-        },
-        {
-            id: uuidv4(),
             title: "Alterações a Esta Política",
             items: [
                 {
@@ -105,14 +95,14 @@ const PrivacyPolicyPage = (props: Props) => {
             items: [
                 {
                     id: uuidv4(),
-                    text: "Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco:"
+                    text: "Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco: contato@wellingtoncimento.com"
                 }
             ]
         },
     ]
     return (
         <ContentLayout title='Política de Privacidade'>
-            <span>Última atualização: 26/09/2024</span>
+            <span>Última atualização: 27/09/2024</span>
             <span>Sua privacidade é importante para nós. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações ao visitar nosso site {appName}.</span>
             {data.map((father, index) => (
                 <div key={father.id}>
