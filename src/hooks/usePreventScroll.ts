@@ -3,12 +3,14 @@ import { useCallback } from "react"
 export const usePreventScroll = () => {
     const preventScroll = useCallback((prevent: boolean) => {
         if(prevent){
-            document.body.style.overflowY = "hidden"
+            document.body.style.overflow = "hidden"
             document.body.style.height = "100%"
-            document.documentElement.style.overflowY = "hidden"
+            document.documentElement.style.height = "100%"
+            document.documentElement.style.overflow = "hidden"
         }else{
             document.body.style.overflowY = ""
             document.body.style.height = ""
+            document.documentElement.style.height = ""
             document.documentElement.style.overflowY = ""
         }
     }, [])
