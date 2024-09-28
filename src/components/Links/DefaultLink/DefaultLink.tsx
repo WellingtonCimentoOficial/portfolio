@@ -1,16 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styles from './DefaultLink.module.css'
-import { Link } from 'react-router-dom'
+import { Link, LinkProps } from 'react-router-dom'
 
-type Props = {
-    children: React.ReactNode
-    href: string
-}
-
-const DefaultLink = ({href, children}: Props) => {
+const DefaultLink = forwardRef<HTMLAnchorElement, LinkProps>(({className, children, ...rest}, ref) => {
     return (
-        <Link className={styles.link} to={href}>{children}</Link>
+        <Link ref={ref} className={styles.link} {...rest}>{children}</Link>
     )
-}
+})
 
 export default DefaultLink

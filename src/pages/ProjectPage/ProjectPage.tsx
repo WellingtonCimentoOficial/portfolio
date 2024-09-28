@@ -60,9 +60,9 @@ const ProjectPage = (props: Props) => {
                             <h2 className={styles.headerTitle}>{project.title}</h2>
                             <div className={styles.version}>1.0.0</div>
                         </div>
-                        <a className={styles.headerIconContainer} href={project.github} target="_blank" rel="noopener noreferrer">
+                        <DefaultLink className={styles.headerIconContainer} to={project.github} target="_blank" rel="noopener noreferrer">
                             <FaGithub className={styles.headerIcon} />
-                        </a>
+                        </DefaultLink>
                     </div>
                     <div className={styles.body}>
                         <TextContentArea>
@@ -84,31 +84,31 @@ const ProjectPage = (props: Props) => {
                             <SubHeading>Getting Started</SubHeading>
                             <DefaultList>
                                 <DefaultItemList>
-                                    Super quick — try the <DefaultLink href="/">Quickstart Guide</DefaultLink>.
+                                    Super quick — try the <DefaultLink to="/">Quickstart Guide</DefaultLink>.
                                 </DefaultItemList>
                                 <DefaultItemList>
-                                    More general — try <DefaultLink href="/">Building an Application with Spring Boot</DefaultLink>
+                                    More general — try <DefaultLink to="/">Building an Application with Spring Boot</DefaultLink>
                                 </DefaultItemList>
                                 <DefaultItemList>
-                                    More specific — try <DefaultLink href="/">Building a RESTful Web Service</DefaultLink>.
+                                    More specific — try <DefaultLink to="/">Building a RESTful Web Service</DefaultLink>.
                                 </DefaultItemList>
                                 <DefaultItemList>
-                                    Or search through all our guides on the <DefaultLink href="/">Guides</DefaultLink> homepage.
+                                    Or search through all our guides on the <DefaultLink to="/">Guides</DefaultLink> homepage.
                                 </DefaultItemList>
                             </DefaultList>
                             <SubHeading>Talks and videos</SubHeading>
                             <DefaultList>
                                 <DefaultItemList>
-                                    <DefaultLink href="/">Mind the Gap: Jumping from Spring Boot 2.x to 3.x</DefaultLink>
+                                    <DefaultLink to="/">Mind the Gap: Jumping from Spring Boot 2.x to 3.x</DefaultLink>
                                 </DefaultItemList>
                                 <DefaultItemList>
-                                    <DefaultLink href="/">Demystifying Spring Internals</DefaultLink>
+                                    <DefaultLink to="/">Demystifying Spring Internals</DefaultLink>
                                 </DefaultItemList>
                                 <DefaultItemList>
-                                    <DefaultLink href="/">Ahead Of Time and Native in Spring Boot 3.0</DefaultLink>
+                                    <DefaultLink to="/">Ahead Of Time and Native in Spring Boot 3.0</DefaultLink>
                                 </DefaultItemList>
                                 <DefaultItemList>
-                                    <DefaultLink href="/">Improve Your Developer Experience with Spring Boot Dev Services</DefaultLink>
+                                    <DefaultLink to="/">Improve Your Developer Experience with Spring Boot Dev Services</DefaultLink>
                                 </DefaultItemList>
                             </DefaultList>
                         </TextContentArea>

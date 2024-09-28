@@ -103,7 +103,7 @@ const PrivacyPolicyPage = (props: Props) => {
     return (
         <ContentLayout title='Política de Privacidade'>
             <span>Última atualização: 27/09/2024</span>
-            <span>Sua privacidade é importante para nós. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações ao visitar nosso site {appName}.</span>
+            <span>Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações ao visitar nosso site {appName}. Sua privacidade é importante para nós. </span>
             {data.map((father, index) => (
                 <div key={father.id}>
                     <SubHeading>{`${index + 1}. ${father.title}`}</SubHeading>

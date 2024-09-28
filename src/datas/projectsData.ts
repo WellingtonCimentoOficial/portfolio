@@ -119,7 +119,7 @@ export const projectData: ProjectType[] = [
 
             ]
         },
-        github: "github.com/WellingtonCimentoOficial/EcMarket",
+        github: "https://github.com/WellingtonCimentoOficial/EcMarket",
         statistics: {
             python: 28.6,
             typescript: 58,
@@ -695,7 +695,7 @@ export const projectData: ProjectType[] = [
                 }
             ]
         },
-        github: "github.com/WellingtonCimentoOficial/EcMarket",
+        github: "https://github.com/WellingtonCimentoOficial/glozble",
         statistics: {
             python: 19.7,
             typescript: 0,
