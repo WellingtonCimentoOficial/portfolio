@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import styles from './mainModal.module.css'
 import { PiPlus, PiLinkBold } from "react-icons/pi";
 import { mainModalType } from '../../../types/mainModalType';
-import { useScrollBlock } from '../../../hooks/useBlockScroll';
 import { Link } from 'react-router-dom';
+import { usePreventScroll } from '../../../hooks/usePreventScroll';
 
 
 type Props = mainModalType & {
@@ -11,19 +11,12 @@ type Props = mainModalType & {
 }
 
 const MainModal = ({setCloseWindowState, children, title, type, href='/'}: Props) => {
-    const { scrollBlock } = useScrollBlock()
-    const windowScrollRef = useRef<{top: number, left: number}>({top: window.scrollY, left: window.scrollX})
+    const { preventScroll } = usePreventScroll()
 
     useEffect(() => {
-        const handleScroll = () => scrollBlock(windowScrollRef.current.top, windowScrollRef.current.left)
-
-        window.addEventListener('scroll', handleScroll)
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-
-    }, [scrollBlock])
+        preventScroll(true)
+        return () => preventScroll(false)
+    }, [preventScroll])
 
     return (
         <div className={styles.wrapper}>
